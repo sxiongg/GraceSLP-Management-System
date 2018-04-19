@@ -12542,11 +12542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/Externship.csproj",
+      "projectUniqueName": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/Backend/Externship.csproj",
       "projectName": "Externship",
-      "projectPath": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/Externship.csproj",
+      "projectPath": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/Backend/Externship.csproj",
       "packagesPath": "/Users/SiaXiong/.nuget/packages/",
-      "outputPath": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/obj/",
+      "outputPath": "/Users/SiaXiong/Desktop/RedwoodCode/Externship/Backend/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
