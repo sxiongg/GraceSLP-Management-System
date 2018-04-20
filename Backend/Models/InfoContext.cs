@@ -9,13 +9,13 @@ namespace GraceSLP
         {
 
         }
-        public DbSet <Appointment> Appointments { get;set; }
-        public DbSet <Doctor> Doctors { get;set; }
-        public DbSet <Employee> Employees { get;set; }
-        public DbSet <Location> Locations { get;set; }
-        public DbSet <Patient> Patients { get;set; }
+        public DbSet <Appointment> Appointments { get; set; }
+        public DbSet <Doctor> Doctors { get; set; }
+        public DbSet <Employee> Employees { get; set; }
+        public DbSet <Location> Locations { get; set; }
+        public DbSet <Patient> Patients { get; set; }
+        public DbSet <DoctorNotes> DoctorNotes { get; set; }
 
     }
     
 }
-

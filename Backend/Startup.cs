@@ -27,7 +27,7 @@ namespace GraceSLP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = "Server=localhost; Database=users; Uid=postgres; Pwd=postgres;";
+            var connectionString = "Server=localhost; Database=GraceSLP; Uid=postgres; Pwd=postgres;";
             services.AddEntityFrameworkNpgsql().AddDbContext<InfoContext> (opt => opt.UseNpgsql(connectionString));
             services.AddCors();
             services.AddMvc().AddJsonOptions(options => {
