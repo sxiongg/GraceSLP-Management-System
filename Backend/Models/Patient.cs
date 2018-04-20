@@ -25,5 +25,4 @@ namespace GraceSLP
         public List<DoctorNotes> DoctorNotes { get;set; }
 
     }
-
 }

@@ -14,7 +14,5 @@ namespace GraceSLP
         public int PatientId { get; set; }
         [ForeignKey( "PatientId" ) ]
         public Patient Patient { get; set; }
-
-
     }
 }
