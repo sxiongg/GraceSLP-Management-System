@@ -1,5 +1,5 @@
 Backend/obj
 Backend/bin
 Backend/.vscode
-Frontend/node-modules*
+Frontend/node-modules
 Frontend/package-lock.json
