@@ -13,8 +13,8 @@ namespace GraceSLP
         public string UserName { get; set; }
         public string Password { get; set; }
         public string DaysAvailable { get; set; }
-        public DateTime StartTime { get;set; }
-        public DateTime EndTime { get;set; }
+        public TimeSpan StartTime { get;set; }
+        public TimeSpan EndTime { get;set; }
         public int LocationId { get; set; }
         [ForeignKey( "LocationId" ) ]
         public Location Location { get; set; }
