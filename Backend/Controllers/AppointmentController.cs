@@ -21,21 +21,21 @@ namespace GraceSLP
         [HttpGet]
         public List<Appointment> Get()
         {
-            return _context.Appointments.ToList();
+            return _context.Appointment.ToList();
         }
 
 
         [HttpGet("{id}")]
         public Appointment GetOneBudget(int id)
         {
-            var b = _context.Appointments.FirstOrDefault(appointment => appointment.Id == id);
+            var b = _context.Appointment.FirstOrDefault(appointment => appointment.Id == id);
             return b;
         }
 
         [HttpPost]
         public Appointment PostNewBudget ([FromBody]Appointment appointment)
         {
-            _context.Appointments.Add(appointment);
+            _context.Appointment.Add(appointment);
             _context.SaveChanges();
 
             return appointment;
@@ -53,8 +53,8 @@ namespace GraceSLP
         [HttpDelete("{id}")]
         public void DeleteBudget (int id)
         {
-            var found = _context.Appointments.FirstOrDefault(i => i.Id == id);
-            _context.Appointments.Remove(found);
+            var found = _context.Appointment.FirstOrDefault(i => i.Id == id);
+            _context.Appointment.Remove(found);
             _context.SaveChanges();
         }
 
