@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 
 
-namespace  GraceSLP
+namespace GraceSLP
 
 {
     public class Patient
@@ -19,10 +19,8 @@ namespace  GraceSLP
         [ForeignKey( "DoctorId" ) ]
         public int LocationId { get; set; }
         [ForeignKey( "LocationId" ) ]
-        
         public Doctor Doctor { get; set; }
         public Location Location { get; set; }
-
         public List <Appointment> Appointments { get; set; } 
 
     }

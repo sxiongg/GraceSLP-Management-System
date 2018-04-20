@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace  GraceSLP
+namespace GraceSLP
 
 {
     public class Employee
@@ -15,9 +15,6 @@ namespace  GraceSLP
         public bool IsAdmin { get;set; }
         public int LocationId { get; set; }
         [ForeignKey( "LocationId" ) ]
-        
         public Location location { get; set; }
-
     }
-
 }
