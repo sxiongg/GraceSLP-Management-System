@@ -18,7 +18,7 @@ namespace GraceSLP
         public string Address { get; set; }
 
         public DateTime DOB { get;set; }
-
+  
         public List<DoctorNotes> DoctorNotes { get;set; }
 
         public int DoctorId { get; set; }
@@ -34,7 +34,6 @@ namespace GraceSLP
         public Location Location { get; set; }
 
         public List <Appointment> Appointments { get; set; } 
-        public List<DoctorNotes> DoctorNotes { get;set; }
 
     }
 }
