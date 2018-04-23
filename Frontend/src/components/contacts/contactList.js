@@ -23,8 +23,8 @@ export default class ContactList extends Component {
     };
   }
   singleContact(contact) {
-    const { seectedId, deleteContact, changeContact } = this.props;
-    const activeClass = seectedId === contact.id ? 'active' : '';
+    const { selectedId, deleteContact, changeContact } = this.props;
+    const activeClass = selectedId === contact.id ? 'active' : '';
     const onChange = () => changeContact(contact.id);
     return (
       <div
