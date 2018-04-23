@@ -36,7 +36,7 @@ export default class ContactList extends Component {
           {contact.avatar ? <img alt="#" src={contact.avatar} /> : ''}
         </div> */}
         <div className="isoContactName">
-          <h3>{contact.name ? contact.name : 'No Name'}</h3>
+          <h3>{contact.firstName ? contact.firstName + " " + contact.lastName : 'No Name'}</h3>
         </div>
         <DeleteButton deleteContact={deleteContact} contact={contact} />
       </div>

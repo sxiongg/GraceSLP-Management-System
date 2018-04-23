@@ -4,7 +4,7 @@ import { ContactCardWrapper } from './contactCard.style';
 export default class extends Component {
   render() {
     const { contact, otherAttributes } = this.props;
-    const name = contact.name ? contact.name : 'No Name';
+    const name = contact.firstName ? contact.firstName + " " + contact.lastName : 'No Name';
     const extraInfos = [];
     otherAttributes.forEach(attribute => {
       const value = contact[attribute.value];

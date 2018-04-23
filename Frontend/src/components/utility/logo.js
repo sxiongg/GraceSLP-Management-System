@@ -15,7 +15,7 @@ export default ({ collapsed }) => {
         </div>
       ) : (
         <h3>
-          <Link to="/dashboard">{siteConfig.siteName}</Link>
+          <Link to="/dashboard">Grace SLP</Link>
         </h3>
       )}
     </div>
