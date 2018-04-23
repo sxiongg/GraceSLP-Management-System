@@ -20,13 +20,12 @@ const contactActions = {
     const newContact = {
       id: new Date(),
       firstName: '',
-      avatar: contacts[new Date() % 10].avatar,
       LastName: '',
-      mobile: '',
-      home: '',
-      name: '',
-      company: '',
-      work: '',
+      phoneNumber: '',
+      address: '',
+      email: '',
+      dob: '',
+      doctor: '',
       note: '',
     };
     return (dispatch, getState) => {

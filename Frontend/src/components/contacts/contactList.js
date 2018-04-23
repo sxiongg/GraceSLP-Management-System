@@ -32,9 +32,9 @@ export default class ContactList extends Component {
         className={`${activeClass} isoSingleContact`}
         onClick={onChange}
       >
-        <div className="isoAvatar">
+        {/* <div className="isoAvatar">
           {contact.avatar ? <img alt="#" src={contact.avatar} /> : ''}
-        </div>
+        </div> */}
         <div className="isoContactName">
           <h3>{contact.name ? contact.name : 'No Name'}</h3>
         </div>
