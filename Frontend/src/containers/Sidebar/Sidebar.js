@@ -164,7 +164,7 @@ class Sidebar extends Component {
                 this.getMenuItem({ submenuStyle, submenuColor, singleOption })
               )}
               {/* Demo Menu */}
-              <SubMenu
+              {/* <SubMenu
                 key="sub1"
                 title={
                   <span className="isoMenuHolder" style={submenuColor}>
@@ -175,7 +175,7 @@ class Sidebar extends Component {
                   </span>
                 }
               >
-                {/* <MenuItemGroup
+                <MenuItemGroup
                   key="g1"
                   title={<IntlMessages id="sidebar.item1" />}
                 >
@@ -196,8 +196,8 @@ class Sidebar extends Component {
                   <Menu.Item style={submenuStyle} key="4">
                     <IntlMessages id="sidebar.option4" />
                   </Menu.Item>
-                </MenuItemGroup> */}
-              </SubMenu>
+                </MenuItemGroup>
+              </SubMenu> */}
             </Menu>
           </Scrollbars>
         </Sider>
