@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraceSLP
 {
-    [Route("api/budget")]
-    public class BudgetController : Controller
+    [Route("api/appointments")]
+    public class AppointmentController : Controller
     {
         private InfoContext _context;
 
-        public BudgetController(InfoContext context)
+        public AppointmentController(InfoContext context)
         {
             _context = context;
         }
@@ -26,14 +26,14 @@ namespace GraceSLP
 
 
         [HttpGet("{id}")]
-        public Appointment GetOneBudget(int id)
+        public Appointment GetOneAppointment(int id)
         {
-            var b = _context.Appointment.FirstOrDefault(appointment => appointment.Id == id);
-            return b;
+            var a = _context.Appointment.FirstOrDefault(appointment => appointment.Id == id);
+            return a;
         }
 
         [HttpPost]
-        public Appointment PostNewBudget ([FromBody]Appointment appointment)
+        public Appointment PostNewAppointment([FromBody]Appointment appointment)
         {
             _context.Appointment.Add(appointment);
             _context.SaveChanges();
@@ -42,7 +42,7 @@ namespace GraceSLP
         }
 
         [HttpPut("{id}")]
-        public Appointment PutBudgetInfo (int id, [FromBody]Appointment appointment)
+        public Appointment PutAppointmentInfo(int id, [FromBody]Appointment appointment)
         {
             _context.Entry(appointment).State = EntityState.Modified;
             _context.SaveChanges();
@@ -51,7 +51,7 @@ namespace GraceSLP
         }
 
         [HttpDelete("{id}")]
-        public void DeleteBudget (int id)
+        public void DeleteAppointment(int id)
         {
             var found = _context.Appointment.FirstOrDefault(i => i.Id == id);
             _context.Appointment.Remove(found);
