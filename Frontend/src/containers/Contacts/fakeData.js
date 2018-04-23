@@ -1,5 +1,5 @@
 export const otherAttributes = [
-  { title: 'PhoneNumber', value: 'phoneNumber', type: 'phoneNumber' },
+  { title: 'Number', value: 'number', type: 'number' },
   { title: 'Address', value: 'address', type: 'string' },
   { title: 'Email', value: 'email', type: 'string' },
   { title: 'DOB', value: 'dob', type: 'integer' },
@@ -12,7 +12,7 @@ const contactList = JSON.parse(
   "id": 22143,
   "firstName": "Benjamin",
   "lastName": "Jacobi",
-  "phoneNumber": "(023) 302-3161 x60451",
+  "number": "456-982-8574",
   "address": "123 Magnolia Lane, Los Angeles, CA 90038",
   "email": "ben@gmail.com",
   "dob": "09-09-85",
@@ -22,7 +22,7 @@ const contactList = JSON.parse(
   "id": 17385,
   "firstName": "Joe",
   "lastName": "Smith",
-  "phoneNumber": "456-847-9521",
+  "number": "456-847-9521",
   "address": "783 Tamarind Ave, Los Angeles, CA 90038",
   "email": "joe@gmail.com",
   "dob": "11-03-85",
@@ -32,7 +32,7 @@ const contactList = JSON.parse(
 );
 
 export default class fakeData {
-  constructor(size = 10) {
+  constructor(size = 2) {
     this.size = size;
     this.datas = [];
   }

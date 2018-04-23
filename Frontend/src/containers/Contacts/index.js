@@ -33,9 +33,10 @@ class Contacts extends Component {
       deleteContact,
       viewChange
     } = this.props;
+
     const selectedContact = selectedId
       ? contacts.filter(contact => contact.id === selectedId)[0]
-      : null;
+      :null;
     const onVIewChange = () => viewChange(!editView);
     return (
       <ContactsWrapper
@@ -103,10 +104,10 @@ class Contacts extends Component {
 }
 
 function mapStateToProps(state) {
-  const { contacts, seectedId, editView } = state.Contacts.toJS();
+  const { contacts, selectedId, editView } = state.Contacts.toJS();
   return {
     contacts,
-    seectedId,
+    selectedId,
     editView
   };
 }
