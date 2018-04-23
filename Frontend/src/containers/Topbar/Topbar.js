@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Layout } from 'antd';
 import appActions from '../../redux/app/actions';
-import TopbarNotification from './topbarNotification';
-import TopbarMessage from './topbarMessage';
-import TopbarSearch from './topbarSearch';
+// import TopbarNotification from './topbarNotification';
+// import TopbarMessage from './topbarMessage';
+// import TopbarSearch from './topbarSearch';
 import TopbarUser from './topbarUser';
-import TopbarAddtoCart from './topbarAddtoCart';
+// import TopbarAddtoCart from './topbarAddtoCart';
 import TopbarWrapper from './topbar.style';
 
 const { Header } = Layout;
@@ -14,7 +14,7 @@ const { toggleCollapsed } = appActions;
 
 class Topbar extends Component {
   render() {
-    const { toggleCollapsed, url, customizedTheme, locale } = this.props;
+    const { toggleCollapsed, customizedTheme, locale } = this.props;
     const collapsed = this.props.collapsed && !this.props.openDrawer;
     const styling = {
       background: customizedTheme.backgroundColor,
@@ -41,11 +41,11 @@ class Topbar extends Component {
           </div>
 
           <ul className="isoRight">
-            <li className="isoSearch">
+            {/* <li className="isoSearch">
               <TopbarSearch locale={locale} />
-            </li>
+            </li> */}
 
-            <li
+            {/* <li
               onClick={() => this.setState({ selectedItem: 'notification' })}
               className="isoNotify"
             >
@@ -63,7 +63,7 @@ class Topbar extends Component {
               className="isoCart"
             >
               <TopbarAddtoCart url={url} locale={locale} />
-            </li>
+            </li> */}
 
             <li
               onClick={() => this.setState({ selectedItem: 'user' })}

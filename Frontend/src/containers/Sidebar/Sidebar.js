@@ -12,7 +12,7 @@ import appActions from '../../redux/app/actions';
 import Logo from '../../components/utility/logo';
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+// const MenuItemGroup = Menu.ItemGroup;
 const { Sider } = Layout;
 
 const {
@@ -175,7 +175,7 @@ class Sidebar extends Component {
                   </span>
                 }
               >
-                <MenuItemGroup
+                {/* <MenuItemGroup
                   key="g1"
                   title={<IntlMessages id="sidebar.item1" />}
                 >
@@ -196,7 +196,7 @@ class Sidebar extends Component {
                   <Menu.Item style={submenuStyle} key="4">
                     <IntlMessages id="sidebar.option4" />
                   </Menu.Item>
-                </MenuItemGroup>
+                </MenuItemGroup> */}
               </SubMenu>
             </Menu>
           </Scrollbars>
