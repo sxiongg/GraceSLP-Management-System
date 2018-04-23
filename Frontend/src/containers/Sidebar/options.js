@@ -136,10 +136,10 @@ const options = [
         key: "FormsWithValidation",
         label: "sidebar.formsWithValidation"
       },
-      {
-        key: "progress",
-        label: "sidebar.progress"
-      },
+      // {
+      //   key: "progress",
+      //   label: "sidebar.progress"
+      // },
       {
         key: "button",
         label: "sidebar.button"
