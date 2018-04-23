@@ -19,7 +19,7 @@ const SignInStyleWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0);
     position: absolute;
     z-index: 1;
     top: 0;
