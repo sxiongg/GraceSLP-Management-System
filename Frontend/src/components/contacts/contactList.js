@@ -23,8 +23,8 @@ export default class ContactList extends Component {
     };
   }
   singleContact(contact) {
-    const { seectedId, deleteContact, changeContact } = this.props;
-    const activeClass = seectedId === contact.id ? 'active' : '';
+    const { selectedId, deleteContact, changeContact } = this.props;
+    const activeClass = selectedId === contact.id ? 'active' : '';
     const onChange = () => changeContact(contact.id);
     return (
       <div
@@ -32,9 +32,9 @@ export default class ContactList extends Component {
         className={`${activeClass} isoSingleContact`}
         onClick={onChange}
       >
-        <div className="isoAvatar">
+        {/* <div className="isoAvatar">
           {contact.avatar ? <img alt="#" src={contact.avatar} /> : ''}
-        </div>
+        </div> */}
         <div className="isoContactName">
           <h3>{contact.name ? contact.name : 'No Name'}</h3>
         </div>

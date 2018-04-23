@@ -20,9 +20,9 @@ export default class extends Component {
     return (
       <ContactCardWrapper className="isoContactCard">
         <div className="isoContactCardHead">
-          <div className="isoPersonImage">
+          {/* <div className="isoPersonImage">
             {contact.avatar ? <img alt="#" src={contact.avatar} /> : ''}
-          </div>
+          </div> */}
           <h1 className="isoPersonName">{name}</h1>
         </div>
         <div className="isoContactInfoWrapper">{extraInfos}</div>

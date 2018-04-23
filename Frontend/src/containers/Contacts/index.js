@@ -25,7 +25,7 @@ class Contacts extends Component {
   render() {
     const {
       contacts,
-      seectedId,
+      selectedId,
       editView,
       changeContact,
       addContact,
@@ -33,9 +33,10 @@ class Contacts extends Component {
       deleteContact,
       viewChange
     } = this.props;
-    const selectedContact = seectedId
-      ? contacts.filter(contact => contact.id === seectedId)[0]
-      : null;
+
+    const selectedContact = selectedId
+      ? contacts.filter(contact => contact.id === selectedId)[0]
+      :null;
     const onVIewChange = () => viewChange(!editView);
     return (
       <ContactsWrapper
@@ -45,7 +46,7 @@ class Contacts extends Component {
         <div className="isoContactListBar">
           <ContactList
             contacts={contacts}
-            seectedId={seectedId}
+            selectedId={selectedId}
             changeContact={changeContact}
             deleteContact={deleteContact}
           />
@@ -103,10 +104,10 @@ class Contacts extends Component {
 }
 
 function mapStateToProps(state) {
-  const { contacts, seectedId, editView } = state.Contacts.toJS();
+  const { contacts, selectedId, editView } = state.Contacts.toJS();
   return {
     contacts,
-    seectedId,
+    selectedId,
     editView
   };
 }

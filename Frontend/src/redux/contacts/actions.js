@@ -1,4 +1,4 @@
-import { contacts } from './reducer';
+// import { contacts } from './reducer';
 
 function ascendingSort(contact1, contact2) {
   const name1 = contact1.name ? contact1.name.toUpperCase() : '~';
@@ -20,13 +20,12 @@ const contactActions = {
     const newContact = {
       id: new Date(),
       firstName: '',
-      avatar: contacts[new Date() % 10].avatar,
       LastName: '',
-      mobile: '',
-      home: '',
-      name: '',
-      company: '',
-      work: '',
+      number: '',
+      address: '',
+      email: '',
+      dob: '',
+      doctor: '',
       note: '',
     };
     return (dispatch, getState) => {
@@ -57,7 +56,7 @@ const contactActions = {
   deleteContact: (id) => {
     return (dispatch, getState) => {
       const contacts = getState().Contacts.get('contacts');
-      const seectedId = getState().Contacts.get('seectedId');
+      const selectedId = getState().Contacts.get('selectedId');
       const newContacts = [];
       contacts.forEach(contact => {
         if (contact.id === id) {
@@ -68,7 +67,7 @@ const contactActions = {
       dispatch({
         type: contactActions.DELETE__CONTACT,
         contacts: newContacts,
-        seectedId: id === seectedId ? undefined : seectedId,
+        selectedId: id === selectedId ? undefined : selectedId,
       });
     };
   },
@@ -77,4 +76,5 @@ const contactActions = {
     view,
   }),
 };
+
 export default contactActions;
