@@ -90,7 +90,7 @@ function mapStateToProps(state) {
     LanguageSwitcher: state.LanguageSwitcher.toJS()
   };
 }
-export default connect(mapStateToProps, {
-  switchActivation,
-  changeTheme
-})(ThemeSwitcher);
+// export default connect(mapStateToProps, {
+//   switchActivation,
+//   changeTheme
+// })(ThemeSwitcher);
