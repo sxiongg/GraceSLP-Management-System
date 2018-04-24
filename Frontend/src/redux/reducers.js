@@ -4,7 +4,7 @@ import Calendar from './calendar/reducer';
 import Box from './box/reducer';
 import Notes from './notes/reducer';
 import Contacts from './contacts/reducer';
-import DynamicChartComponent from './dynamicEchart/reducer';
+// import DynamicChartComponent from './dynamicEchart/reducer';
 import ThemeSwitcher from './themeSwitcher/reducer';
 import LanguageSwitcher from './languageSwitcher/reducer';
 
@@ -16,6 +16,6 @@ export default {
   Calendar,
   Box,
   Notes,
-  Contacts,
-  DynamicChartComponent
+  Contacts
+  // DynamicChartComponent
 };

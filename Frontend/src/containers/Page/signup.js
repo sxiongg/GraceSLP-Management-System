@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Input from '../../components/uielements/input';
-import Checkbox from '../../components/uielements/checkbox';
+// import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
 import authAction from '../../redux/auth/actions';
 import Auth0 from '../../helpers/auth0/index';
@@ -67,11 +67,11 @@ class SignUp extends Component {
                 />
               </div>
 
-              <div className="isoInputWrapper" style={{ marginBottom: '50px' }}>
-                <Checkbox>
-                  <IntlMessages id="page.signUpTermsConditions" />
-                </Checkbox>
-              </div>
+              {/* // <div className="isoInputWrapper" style={{ marginBottom: '50px' }}>
+              //   <Checkbox>
+              //     <IntlMessages id="page.signUpTermsConditions" />
+              //   </Checkbox>
+              // </div> */}
 
               <div className="isoInputWrapper">
                 <Button type="primary">
@@ -79,12 +79,12 @@ class SignUp extends Component {
                 </Button>
               </div>
               <div className="isoInputWrapper isoOtherLogin">
-                <Button onClick={this.handleLogin} type="primary btnFacebook">
+                {/* <Button onClick={this.handleLogin} type="primary btnFacebook">
                   <IntlMessages id="page.signUpFacebook" />
                 </Button>
                 <Button onClick={this.handleLogin} type="primary btnGooglePlus">
                   <IntlMessages id="page.signUpGooglePlus" />
-                </Button>
+                </Button> */}
                 {Auth0.isValid && (
                   <Button
                     onClick={() => {

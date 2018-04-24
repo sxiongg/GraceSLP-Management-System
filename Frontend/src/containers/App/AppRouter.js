@@ -12,10 +12,6 @@ const routes = [
     path: "calendar",
     component: asyncComponent(() => import("../Calendar/Calendar"))
   },
-  // {
-  //   path: "employees",
-  //   component: asyncComponent(() => import("../Employees"))
-  // },
   {
     path: "table_ant",
     component: asyncComponent(() => import("../Tables/antTables"))
@@ -84,10 +80,10 @@ const routes = [
     path: "notes",
     component: asyncComponent(() => import("../Notes"))
   },
-  {
-    path: "todo",
-    component: asyncComponent(() => import("../Todo"))
-  },
+  // {
+  //   path: "todo",
+  //   component: asyncComponent(() => import("../Todo"))
+  // },
   {
     path: "contacts",
     component: asyncComponent(() => import("../Contacts"))
@@ -178,28 +174,28 @@ const routes = [
     path: "op_popover",
     component: asyncComponent(() => import("../Uielements/Popover"))
   },
-  {
-    path: "reactVis",
-    component: asyncComponent(() => import("../Charts/reactVis"))
-  },
+  // {
+  //   path: "reactVis",
+  //   component: asyncComponent(() => import("../Charts/reactVis"))
+  // },
   {
     path: "menu",
     component: asyncComponent(() => import("../Navigation/menu"))
   },
-  {
-    path: "ReactChart2",
-    component: asyncComponent(() => import("../Charts/reactChart2"))
-  },
+  // {
+  //   path: "ReactChart2",
+  //   component: asyncComponent(() => import("../Charts/reactChart2"))
+  // },
   {
     path: "pagination",
     component: asyncComponent(() =>
       import("../Uielements/Pagination/pagination")
     )
   },
-  {
-    path: "reactTrend",
-    component: asyncComponent(() => import("../Charts/reactTrend"))
-  },
+  // {
+  //   path: "reactTrend",
+  //   component: asyncComponent(() => import("../Charts/reactTrend"))
+  // },
   {
     path: "reactDates",
     component: asyncComponent(() =>
@@ -218,10 +214,10 @@ const routes = [
     path: "dropzone",
     component: asyncComponent(() => import("../AdvancedUI/dropzone"))
   },
-  {
-    path: "frappeChart",
-    component: asyncComponent(() => import("../Charts/frappeChart"))
-  },
+  // {
+  //   path: "frappeChart",
+  //   component: asyncComponent(() => import("../Charts/frappeChart"))
+  // },
   // ...customRoutes
 ];
 
