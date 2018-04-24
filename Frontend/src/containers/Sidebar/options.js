@@ -64,11 +64,11 @@ const options = [
     label: "sidebar.calendar",
     leftIcon: "ion-calendar"
   },
-  {
-    key: "notes",
-    label: "sidebar.notes",
-    leftIcon: "ion-ios-paper"
-  },
+  // {
+  //   key: "notes",
+  //   label: "sidebar.notes",
+  //   leftIcon: "ion-ios-paper"
+  // },
   // {
   //   key: "todo",
   //   label: "sidebar.todos",
@@ -285,17 +285,17 @@ const options = [
   //     }
   //   ]
   // },
-  {
-    key: "table",
-    label: "sidebar.tables",
-    leftIcon: "ion-android-menu",
-    children: [
-      {
-        key: "table_ant",
-        label: "sidebar.antTables"
-      }
-    ]
-  },
+  // {
+  //   key: "table",
+  //   label: "sidebar.tables",
+  //   leftIcon: "ion-android-menu",
+  //   children: [
+  //     {
+  //       key: "table_ant",
+  //       label: "sidebar.antTables"
+  //     }
+  //   ]
+  // },
   {
     key: "pages",
     label: "sidebar.pages",
