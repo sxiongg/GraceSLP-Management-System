@@ -28,9 +28,10 @@ namespace GraceSLP
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = "Server=localhost; Database=GraceSLP; Uid=postgres; Pwd=postgres;";
-            services.AddEntityFrameworkNpgsql().AddDbContext<InfoContext> (opt => opt.UseNpgsql(connectionString));
+            services.AddEntityFrameworkNpgsql().AddDbContext<InfoContext>(opt => opt.UseNpgsql(connectionString));
             services.AddCors();
-            services.AddMvc().AddJsonOptions(options => {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
         }
@@ -41,6 +42,12 @@ namespace GraceSLP
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
             app.UseMvc();
         }
     }
