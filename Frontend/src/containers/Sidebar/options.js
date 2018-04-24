@@ -79,6 +79,7 @@ const options = [
     label: "sidebar.contacts",
     leftIcon: "ion-android-person-add"
   },
+
   // {
   //   key: "shuffle",
   //   label: "sidebar.shuffle",

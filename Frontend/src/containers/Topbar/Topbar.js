@@ -35,7 +35,7 @@ class Topbar extends Component {
               className={
                 collapsed ? 'triggerBtn menuCollapsed' : 'triggerBtn menuOpen'
               }
-              style={{ color: customizedTheme.textColor }}
+              // style={{ color: customizedTheme.textColor }}
               onClick={toggleCollapsed}
             />
           </div>
