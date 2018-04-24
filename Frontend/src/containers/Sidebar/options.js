@@ -1,6 +1,26 @@
 // import getDevSidebar from "../../customApp/sidebar";
 
 const options = [
+  {
+    key: "calendar",
+    label: "sidebar.calendar",
+    leftIcon: "ion-calendar"
+  },
+  {
+    key: "patients",
+    label: "sidebar.contacts",
+    leftIcon: "ion-android-person-add"
+  },
+  {
+    key: "employees",
+    label: "sidebar.employees",
+    leftIcon: ""
+  },
+  {
+    key: "add-account",
+    label: "sidebar.addAccount",
+    leftIcon: ""
+  },
   // {
   //   key: "mailbox",
   //   label: "sidebar.email",
@@ -59,11 +79,6 @@ const options = [
   //   label: "sidebar.youtubeSearch",
   //   leftIcon: "ion-social-youtube"
   // },
-  {
-    key: "calendar",
-    label: "sidebar.calendar",
-    leftIcon: "ion-calendar"
-  },
   // {
   //   key: "notes",
   //   label: "sidebar.notes",
@@ -74,12 +89,6 @@ const options = [
   //   label: "sidebar.todos",
   //   leftIcon: "ion-android-checkbox-outline"
   // },
-  {
-    key: "contacts",
-    label: "sidebar.contacts",
-    leftIcon: "ion-android-person-add"
-  },
-
   // {
   //   key: "shuffle",
   //   label: "sidebar.shuffle",
@@ -176,61 +185,61 @@ const options = [
   //   label: 'sidebar.boxOptions',
   //   leftIcon: 'ion-cube'
   // },
-  // {
-  //   key: "uielements",
-  //   label: "sidebar.uiElements",
-  //   leftIcon: "ion-leaf",
-  //   children: [
-  //     {
-  //       key: "op_badge",
-  //       label: "sidebar.badge"
-  //     },
-  //     {
-  //       key: "op_card",
-  //       label: "sidebar.card2"
-  //     },
-  //     {
-  //       key: "op_carousel",
-  //       label: "sidebar.corusel"
-  //     },
-  //     {
-  //       key: "op_collapse",
-  //       label: "sidebar.collapse"
-  //     },
-  //     {
-  //       key: "op_popover",
-  //       label: "sidebar.popover"
-  //     },
-  //     {
-  //       key: "op_tooltip",
-  //       label: "sidebar.tooltip"
-  //     },
-  //     {
-  //       key: "op_tag",
-  //       label: "sidebar.tag"
-  //     },
-  //     {
-  //       key: "op_timeline",
-  //       label: "sidebar.timeline"
-  //     },
-  //     {
-  //       key: "dropdown",
-  //       label: "sidebar.dropdown"
-  //     },
-  //     {
-  //       key: "pagination",
-  //       label: "sidebar.pagination"
-  //     },
-  //     {
-  //       key: "rating",
-  //       label: "sidebar.rating"
-  //     },
-  //     {
-  //       key: "tree",
-  //       label: "sidebar.tree"
-  //     }
-  //   ]
-  // },
+  {
+    key: "uielements",
+    label: "sidebar.uiElements",
+    leftIcon: "ion-leaf",
+    children: [
+      {
+        key: "op_badge",
+        label: "sidebar.badge"
+      },
+      {
+        key: "op_card",
+        label: "sidebar.card2"
+      },
+      {
+        key: "op_carousel",
+        label: "sidebar.corusel"
+      },
+      {
+        key: "op_collapse",
+        label: "sidebar.collapse"
+      },
+      {
+        key: "op_popover",
+        label: "sidebar.popover"
+      },
+      {
+        key: "op_tooltip",
+        label: "sidebar.tooltip"
+      },
+      {
+        key: "op_tag",
+        label: "sidebar.tag"
+      },
+      {
+        key: "op_timeline",
+        label: "sidebar.timeline"
+      },
+      {
+        key: "dropdown",
+        label: "sidebar.dropdown"
+      },
+      {
+        key: "pagination",
+        label: "sidebar.pagination"
+      },
+      {
+        key: "rating",
+        label: "sidebar.rating"
+      },
+      {
+        key: "tree",
+        label: "sidebar.tree"
+      }
+    ]
+  },
   // {
   //   key: "advancedUielements",
   //   label: "sidebar.advancedElements",

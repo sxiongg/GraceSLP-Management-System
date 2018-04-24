@@ -1,4 +1,6 @@
 {
+  "sidebar.employees": "Employees",
+  "sidebar.addAccount": "Add Account",
   "sidebar.email": "Email",
   "sidebar.chat": "Chat",
   "sidebar.ecommerce": "Ecommerce",
@@ -12,7 +14,7 @@
   "sidebar.calendar": "Appointments",
   "sidebar.notes": "Notes",
   "sidebar.todos": "Todos",
-  "sidebar.contacts": "Contacts",
+  "sidebar.contacts": "Patients",
   "sidebar.shuffle": "Shuffle",
   "sidebar.charts": "Charts",
   "sidebar.googleCharts": "Google Carts",
