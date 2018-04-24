@@ -73,6 +73,7 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
           component={App}
           isLoggedIn={isLoggedIn}
         />
+
       </div>
     </ConnectedRouter>
   );

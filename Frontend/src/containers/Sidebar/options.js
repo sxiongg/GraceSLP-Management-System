@@ -65,6 +65,11 @@ const options = [
     leftIcon: "ion-calendar"
   },
   {
+    key: "employees",
+    label: "sidebar.employees",
+    leftIcon: ""
+  },
+  {
     key: "notes",
     label: "sidebar.notes",
     leftIcon: "ion-ios-paper"
@@ -175,61 +180,61 @@ const options = [
   //   label: 'sidebar.boxOptions',
   //   leftIcon: 'ion-cube'
   // },
-  // {
-  //   key: "uielements",
-  //   label: "sidebar.uiElements",
-  //   leftIcon: "ion-leaf",
-  //   children: [
-  //     {
-  //       key: "op_badge",
-  //       label: "sidebar.badge"
-  //     },
-  //     {
-  //       key: "op_card",
-  //       label: "sidebar.card2"
-  //     },
-  //     {
-  //       key: "op_carousel",
-  //       label: "sidebar.corusel"
-  //     },
-  //     {
-  //       key: "op_collapse",
-  //       label: "sidebar.collapse"
-  //     },
-  //     {
-  //       key: "op_popover",
-  //       label: "sidebar.popover"
-  //     },
-  //     {
-  //       key: "op_tooltip",
-  //       label: "sidebar.tooltip"
-  //     },
-  //     {
-  //       key: "op_tag",
-  //       label: "sidebar.tag"
-  //     },
-  //     {
-  //       key: "op_timeline",
-  //       label: "sidebar.timeline"
-  //     },
-  //     {
-  //       key: "dropdown",
-  //       label: "sidebar.dropdown"
-  //     },
-  //     {
-  //       key: "pagination",
-  //       label: "sidebar.pagination"
-  //     },
-  //     {
-  //       key: "rating",
-  //       label: "sidebar.rating"
-  //     },
-  //     {
-  //       key: "tree",
-  //       label: "sidebar.tree"
-  //     }
-  //   ]
-  // },
+  {
+    key: "uielements",
+    label: "sidebar.uiElements",
+    leftIcon: "ion-leaf",
+    children: [
+      {
+        key: "op_badge",
+        label: "sidebar.badge"
+      },
+      {
+        key: "op_card",
+        label: "sidebar.card2"
+      },
+      {
+        key: "op_carousel",
+        label: "sidebar.corusel"
+      },
+      {
+        key: "op_collapse",
+        label: "sidebar.collapse"
+      },
+      {
+        key: "op_popover",
+        label: "sidebar.popover"
+      },
+      {
+        key: "op_tooltip",
+        label: "sidebar.tooltip"
+      },
+      {
+        key: "op_tag",
+        label: "sidebar.tag"
+      },
+      {
+        key: "op_timeline",
+        label: "sidebar.timeline"
+      },
+      {
+        key: "dropdown",
+        label: "sidebar.dropdown"
+      },
+      {
+        key: "pagination",
+        label: "sidebar.pagination"
+      },
+      {
+        key: "rating",
+        label: "sidebar.rating"
+      },
+      {
+        key: "tree",
+        label: "sidebar.tree"
+      }
+    ]
+  },
   // {
   //   key: "advancedUielements",
   //   label: "sidebar.advancedElements",

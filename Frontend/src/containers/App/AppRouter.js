@@ -20,6 +20,10 @@ const routes = [
     path: "calendar",
     component: asyncComponent(() => import("../Calendar/Calendar"))
   },
+  // {
+  //   path: "employees",
+  //   component: asyncComponent(() => import("../Employees"))
+  // },
   {
     path: "googlemap",
     component: asyncComponent(() => import("../Map/GoogleMap/googleMap"))
