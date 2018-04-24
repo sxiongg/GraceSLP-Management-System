@@ -85,7 +85,7 @@ const routes = [
   //   component: asyncComponent(() => import("../Todo"))
   // },
   {
-    path: "contacts",
+    path: "patients",
     component: asyncComponent(() => import("../Contacts"))
   },
   {

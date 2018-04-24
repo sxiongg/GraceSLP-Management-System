@@ -4,7 +4,7 @@ export default {
 const siteConfig = {
   siteName: 'ISOMORPHIC',
   siteIcon: 'ion-flash',
-  footerText: 'Isomorphic ©2017 Created by RedQ, Inc'
+  footerText: ''
 };
 
 const themeConfig = {

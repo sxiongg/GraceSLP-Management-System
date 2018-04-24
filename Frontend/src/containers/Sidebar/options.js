@@ -1,6 +1,26 @@
 // import getDevSidebar from "../../customApp/sidebar";
 
 const options = [
+  {
+    key: "calendar",
+    label: "sidebar.calendar",
+    leftIcon: "ion-calendar"
+  },
+  {
+    key: "patients",
+    label: "sidebar.contacts",
+    leftIcon: "ion-android-person-add"
+  },
+  {
+    key: "employees",
+    label: "sidebar.employees",
+    leftIcon: ""
+  },
+  {
+    key: "add-account",
+    label: "sidebar.addAccount",
+    leftIcon: ""
+  },
   // {
   //   key: "mailbox",
   //   label: "sidebar.email",
@@ -59,32 +79,16 @@ const options = [
   //   label: "sidebar.youtubeSearch",
   //   leftIcon: "ion-social-youtube"
   // },
-  {
-    key: "calendar",
-    label: "sidebar.calendar",
-    leftIcon: "ion-calendar"
-  },
-  {
-    key: "employees",
-    label: "sidebar.employees",
-    leftIcon: ""
-  },
-  {
-    key: "notes",
-    label: "sidebar.notes",
-    leftIcon: "ion-ios-paper"
-  },
+  // {
+  //   key: "notes",
+  //   label: "sidebar.notes",
+  //   leftIcon: "ion-ios-paper"
+  // },
   // {
   //   key: "todo",
   //   label: "sidebar.todos",
   //   leftIcon: "ion-android-checkbox-outline"
   // },
-  {
-    key: "contacts",
-    label: "sidebar.contacts",
-    leftIcon: "ion-android-person-add"
-  },
-
   // {
   //   key: "shuffle",
   //   label: "sidebar.shuffle",
@@ -290,17 +294,17 @@ const options = [
   //     }
   //   ]
   // },
-  {
-    key: "table",
-    label: "sidebar.tables",
-    leftIcon: "ion-android-menu",
-    children: [
-      {
-        key: "table_ant",
-        label: "sidebar.antTables"
-      }
-    ]
-  },
+  // {
+  //   key: "table",
+  //   label: "sidebar.tables",
+  //   leftIcon: "ion-android-menu",
+  //   children: [
+  //     {
+  //       key: "table_ant",
+  //       label: "sidebar.antTables"
+  //     }
+  //   ]
+  // },
   {
     key: "pages",
     label: "sidebar.pages",
