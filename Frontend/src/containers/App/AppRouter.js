@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import asyncComponent from "../../helpers/AsyncFunc";
-import customRoutes from "../../customApp/router";
+// import customRoutes from "../../customApp/router";
 
 const routes = [
   {
     path: "",
     component: asyncComponent(() => import("../Calendar/Calendar"))
-  },
-  {
-    path: "inbox",
-    component: asyncComponent(() => import("../Mail"))
-  },
-  {
-    path: "mailbox",
-    component: asyncComponent(() => import("../Mail"))
   },
   {
     path: "calendar",
@@ -24,14 +16,6 @@ const routes = [
   //   path: "employees",
   //   component: asyncComponent(() => import("../Employees"))
   // },
-  {
-    path: "googlemap",
-    component: asyncComponent(() => import("../Map/GoogleMap/googleMap"))
-  },
-  {
-    path: "leafletmap",
-    component: asyncComponent(() => import("../Map/Leaflet/leaflet"))
-  },
   {
     path: "table_ant",
     component: asyncComponent(() => import("../Tables/antTables"))
@@ -195,14 +179,6 @@ const routes = [
     component: asyncComponent(() => import("../Uielements/Popover"))
   },
   {
-    path: "googleChart",
-    component: asyncComponent(() => import("../Charts/googleChart"))
-  },
-  {
-    path: "reecharts",
-    component: asyncComponent(() => import("../Charts/recharts"))
-  },
-  {
     path: "reactVis",
     component: asyncComponent(() => import("../Charts/reactVis"))
   },
@@ -225,24 +201,6 @@ const routes = [
     component: asyncComponent(() => import("../Charts/reactTrend"))
   },
   {
-    path: "card",
-    component: asyncComponent(() => import("../Ecommerce/card"))
-  },
-  {
-    path: "cart",
-    component: asyncComponent(() => import("../Ecommerce/cart"))
-  },
-  {
-    path: "checkout",
-    component: asyncComponent(() => import("../Ecommerce/checkout"))
-  },
-  {
-    path: "shop",
-    component: asyncComponent(() =>
-      import("../Ecommerce/algolia/instantSearch")
-    )
-  },
-  {
     path: "reactDates",
     component: asyncComponent(() =>
       import("../AdvancedUI/ReactDates/reactDates")
@@ -261,26 +219,10 @@ const routes = [
     component: asyncComponent(() => import("../AdvancedUI/dropzone"))
   },
   {
-    path: "youtubeSearch",
-    component: asyncComponent(() => import("../YoutubeSearch"))
-  },
-  {
     path: "frappeChart",
     component: asyncComponent(() => import("../Charts/frappeChart"))
   },
-  {
-    path: "invoice/:invoiceId",
-    component: asyncComponent(() => import("../Invoice/singleInvoice"))
-  },
-  {
-    path: "invoice",
-    component: asyncComponent(() => import("../Invoice"))
-  },
-  {
-    path: "chat",
-    component: asyncComponent(() => import("../Chat"))
-  },
-  ...customRoutes
+  // ...customRoutes
 ];
 
 class AppRouter extends Component {
