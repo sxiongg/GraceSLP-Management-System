@@ -13,6 +13,8 @@ import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
 import axios from "axios";
 
+import { push } from '../../redux/contacts/actions'
+
 const {
   changeContact,
   addContact,
@@ -41,13 +43,15 @@ componentDidMount() {
         for ( var e = 0; e < response.data.length; e++) {
         this.state.contacts[e].dob = response.data[e].dob.substring(0,10)
       }      
-
   })
+}
+
+addContact() {
+  console.log ('hello')
 }
 
   render() {
     const {
-      // contacts,
       selectedId,
       editView,
       changeContact,
@@ -90,7 +94,7 @@ componentDidMount() {
                 />
                 <Button
                   type="primary"
-                  onClick={addContact}
+                  onClick={this.addContact.bind(this)}
                   className="isoAddContactBtn"
                 >
                   <IntlMessages id="contactlist.addNewContact" />
@@ -144,10 +148,11 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {
+
+export default connect(mapStateToProps,{
   changeContact,
   addContact,
   editContact,
   deleteContact,
   viewChange
-})(Contacts);
+} )(Contacts);

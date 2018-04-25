@@ -111,6 +111,8 @@ function mapStateToProps(state) {
     editView
   };
 }
+
+
 export default connect(mapStateToProps, {
   changeContact,
   addContact,
