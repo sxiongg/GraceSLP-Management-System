@@ -80,13 +80,13 @@ const routes = [
     path: "notes",
     component: asyncComponent(() => import("../Notes"))
   },
-  // {
-  //   path: "todo",
-  //   component: asyncComponent(() => import("../Todo"))
-  // },
   {
     path: "patients",
     component: asyncComponent(() => import("../Contacts"))
+  },
+  {
+    path: "employees",
+    component: asyncComponent(() => import("../Employees"))
   },
   {
     path: "alert",

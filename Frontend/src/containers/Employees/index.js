@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import contactAction from "../../redux/contacts/actions";
+import contactAction from "../../redux/employees/actions";
 import { Layout, Icon } from "antd";
 import Button from "../../components/uielements/button";
-import ContactList from "../../components/contacts/contactList";
-import SingleContactView from "../../components/contacts/singleView";
-import EditContactView from "../../components/contacts/editView";
-import DeleteButton from "../../components/contacts/deleteButton";
+import ContactList from "../../components/employees/contactList";
+import SingleContactView from "../../components/employees/singleView";
+import EditContactView from "../../components/employees/editView";
+import DeleteButton from "../../components/employees/deleteButton";
 import { otherAttributes } from "./fakeData";
 import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";

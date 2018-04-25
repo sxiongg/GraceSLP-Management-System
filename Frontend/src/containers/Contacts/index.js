@@ -34,8 +34,14 @@ class Contacts extends Component {
 componentDidMount() {
   axios.get('http://localhost:5000/api/patients')
   .then(response => {
-      this.setState ({ contacts: response.data })
       console.log (response.data);
+
+      this.setState ({ contacts: response.data })
+
+        for ( var e = 0; e < response.data.length; e++) {
+        this.state.contacts[e].dob = response.data[e].dob.substring(0,10)
+      }      
+
   })
 }
 
@@ -123,6 +129,12 @@ componentDidMount() {
   }
 }
 
+function addContactToDB () {
+  console.log ("hey")
+}
+
+
+
 function mapStateToProps(state) {
   const { contacts, selectedId, editView } = state.Contacts.toJS();
   return {
@@ -131,6 +143,7 @@ function mapStateToProps(state) {
     editView
   };
 }
+
 export default connect(mapStateToProps, {
   changeContact,
   addContact,
