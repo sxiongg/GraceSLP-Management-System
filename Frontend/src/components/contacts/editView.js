@@ -20,6 +20,7 @@ function beforeUpload(file) {
   notification('success', 'Image uploaded successfully!', '');
   return true;
 }
+
 export default class extends Component {
   render() {
     const { contact, otherAttributes } = this.props;

@@ -1,16 +1,21 @@
 import { Map } from "immutable";
-import fakeData from "../../containers/Contacts/fakeData";
+// import fakeData from "../../containers/Contacts/fakeData";
 import contactActions from "./actions";
 
-const contacts = new fakeData(2).getAll();
+// const contacts = new fakeData(2).getAll();
+let contacts = [];
+
+
 
 const initState = new Map({
   contacts,
-  selectedId: contacts[0].id,
+  selectedId:'',
   editView: false
 });
 
 export default function contactReducer(state = initState, action) {
+
+
   switch (action.type) {
     case contactActions.CHANGE_CONTACT:
       return state.set("selectedId", action.id).set("editView", false);
