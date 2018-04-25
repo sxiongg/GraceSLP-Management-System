@@ -61,9 +61,6 @@ addContact() {
       viewChange
     } = this.props;
 
-
-
-
     const selectedContact = selectedId
       ? this.state.contacts.filter(contact => contact.id === selectedId)[0]
       :null;
