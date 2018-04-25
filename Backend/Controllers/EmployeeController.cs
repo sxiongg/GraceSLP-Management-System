@@ -32,6 +32,13 @@ namespace GraceSLP
             return e;
         }
 
+        [HttpGet("username/{username}")]
+        public Employee GetOneEmployeeByUsername(string username)
+        {
+            var e = _context.Employee.FirstOrDefault(employee => employee.Username == username);
+            return e;
+        }
+
         [HttpPost]
         public Employee PostNewEmployee([FromBody]Employee employee)
         {
