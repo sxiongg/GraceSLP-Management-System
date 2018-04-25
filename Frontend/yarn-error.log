@@ -2,7 +2,7 @@ Arguments:
   /usr/local/bin/node /usr/local/bin/yarn start
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+  /Library/Frameworks/Python.framework/Versions/3.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Python.framework/Versions/3.4/bin
 
 Yarn version: 
   1.5.1
@@ -10221,7 +10221,7 @@ Trace:
   Exit code: 127
   Command: sh
   Arguments: -c react-app-rewired start
-  Directory: /Users/kelsey/Desktop/Redwood_Codes/GraceSLP/Frontend
+  Directory: /Users/SiaXiong/RedwoodCode/Externship/Frontend
   Output:
   
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)

@@ -13,6 +13,10 @@ const routes = [
     component: asyncComponent(() => import("../Calendar/Calendar"))
   },
   {
+    path: "add-account",
+    component: asyncComponent(() => import('../../containers/Page/signup'))
+  },
+  {
     path: "table_ant",
     component: asyncComponent(() => import("../Tables/antTables"))
   },
