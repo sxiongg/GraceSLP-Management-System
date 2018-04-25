@@ -8,14 +8,14 @@ export default ({ collapsed }) => {
       {collapsed ? (
         <div>
           <h3>
-            <Link to="/dashboard">
+            <Link to="./">
               <i className={siteConfig.siteIcon} />
             </Link>
           </h3>
         </div>
       ) : (
         <h3>
-          <Link to="/dashboard">Grace SLP</Link>
+          <Link to="./">Grace SLP</Link>
         </h3>
       )}
     </div>
