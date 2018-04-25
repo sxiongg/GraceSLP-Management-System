@@ -5,9 +5,9 @@ import Input from '../../components/uielements/input';
 // import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
 import authAction from '../../redux/auth/actions';
-import Auth0 from '../../helpers/auth0/index';
-import Firebase from '../../helpers/firebase';
-import FirebaseLogin from '../../components/firebase';
+// import Auth0 from '../../helpers/auth0/index';
+// import Firebase from '../../helpers/firebase';
+// import  FirebaseLogin from '../../components/firebase';
 import IntlMessages from '../../components/utility/intlMessages';
 import SignUpStyleWrapper from './signup.style';
 
@@ -17,14 +17,14 @@ class SignUp extends Component {
   state = {
     redirectToReferrer: false
   };
-  componentWillReceiveProps(nextProps) {
-    if (
-      this.props.isLoggedIn !== nextProps.isLoggedIn &&
-      nextProps.isLoggedIn === true
-    ) {
-      this.setState({ redirectToReferrer: true });
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (
+  //     this.props.isLoggedIn !== nextProps.isLoggedIn &&
+  //     nextProps.isLoggedIn === true
+  //   ) {
+  //     this.setState({ redirectToReferrer: true });
+  //   }
+  // }
   handleLogin = () => {
     const { login } = this.props;
     login();
@@ -78,14 +78,14 @@ class SignUp extends Component {
                   <IntlMessages id="page.signUpButton" />
                 </Button>
               </div>
-              <div className="isoInputWrapper isoOtherLogin">
+              {/* <div className="isoInputWrapper isoOtherLogin"> */}
                 {/* <Button onClick={this.handleLogin} type="primary btnFacebook">
                   <IntlMessages id="page.signUpFacebook" />
                 </Button>
                 <Button onClick={this.handleLogin} type="primary btnGooglePlus">
                   <IntlMessages id="page.signUpGooglePlus" />
                 </Button> */}
-                {Auth0.isValid && (
+                {/* {Auth0.isValid && (
                   <Button
                     onClick={() => {
                       Auth0.login(this.handleLogin);
@@ -99,12 +99,12 @@ class SignUp extends Component {
                 {Firebase.isValid && (
                   <FirebaseLogin signup={true} login={this.handleLogin} />
                 )}
-              </div>
-              <div className="isoInputWrapper isoCenterComponent isoHelperWrapper">
+              </div> */}
+              {/* <div className="isoInputWrapper isoCenterComponent isoHelperWrapper">
                 <Link to="/signin">
                   <IntlMessages id="page.signUpAlreadyAccount" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

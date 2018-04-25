@@ -17,6 +17,10 @@ const routes = [
     component: asyncComponent(() => import('../../containers/Page/signup'))
   },
   {
+    path: "employees",
+    component: asyncComponent(() => import('../Employees'))
+  },
+  {
     path: "table_ant",
     component: asyncComponent(() => import("../Tables/antTables"))
   },

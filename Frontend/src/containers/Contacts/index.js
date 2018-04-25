@@ -36,6 +36,9 @@ componentDidMount() {
   .then(response => {
       this.setState ({ contacts: response.data })
       console.log (response.data);
+      for ( var e = 0; e < response.data.length; e++) {
+        this.state.contacts[e].dob = response.data[e].dob.substring(0,10)
+      }
   })
 }
 
@@ -50,9 +53,6 @@ componentDidMount() {
       deleteContact,
       viewChange
     } = this.props;
-
-
-
 
     const selectedContact = selectedId
       ? this.state.contacts.filter(contact => contact.id === selectedId)[0]
