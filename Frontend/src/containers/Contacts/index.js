@@ -11,6 +11,7 @@ import { otherAttributes } from "./fakeData";
 import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
+import axios from "axios";
 
 const {
   changeContact,
@@ -22,9 +23,25 @@ const {
 
 const { Content } = Layout;
 class Contacts extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        contacts: []
+    }
+}
+
+componentDidMount() {
+  axios.get('http://localhost:5000/api/patients')
+  .then(response => {
+      this.setState ({ contacts: response.data })
+      console.log (response.data);
+  })
+}
+
   render() {
     const {
-      contacts,
+      // contacts,
       selectedId,
       editView,
       changeContact,
@@ -34,8 +51,11 @@ class Contacts extends Component {
       viewChange
     } = this.props;
 
+
+
+
     const selectedContact = selectedId
-      ? contacts.filter(contact => contact.id === selectedId)[0]
+      ? this.state.contacts.filter(contact => contact.id === selectedId)[0]
       :null;
     const onVIewChange = () => viewChange(!editView);
     return (
@@ -45,7 +65,7 @@ class Contacts extends Component {
       >
         <div className="isoContactListBar">
           <ContactList
-            contacts={contacts}
+            contacts={this.state.contacts}
             selectedId={selectedId}
             changeContact={changeContact}
             deleteContact={deleteContact}

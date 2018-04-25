@@ -6,6 +6,7 @@ function ascendingSort(contact1, contact2) {
   return name1 > name2 ? 1 : name1 === name2 ? 0 : -1;
 }
 
+
 const contactActions = {
   ADD_CONTACT: 'ADD_CONTACT',
   EDIT_CONTACT: 'EDIT_CONTACT',

@@ -1,30 +1,21 @@
 import { Map } from "immutable";
-import fakeData from "../../containers/Contacts/fakeData";
+// import fakeData from "../../containers/Contacts/fakeData";
 import contactActions from "./actions";
-import axios from 'axios'
 
-const contacts = new fakeData(2).getAll();
+// const contacts = new fakeData(2).getAll();
+let contacts = [];
 
-var contacts1 = [];
 
-axios.get('http://localhost:5000/api/patients')
-      .then(response => {
-          var r = response.data
-          contacts1 = r;
-          // contacts: contacts1
-          console.log(contacts)
-          console.log(contacts1)
-      })
-      
-console.log (contacts1);
 
 const initState = new Map({
   contacts,
-  selectedId: contacts[0].id,
+  selectedId:'',
   editView: false
 });
 
 export default function contactReducer(state = initState, action) {
+
+
   switch (action.type) {
     case contactActions.CHANGE_CONTACT:
       return state.set("selectedId", action.id).set("editView", false);
