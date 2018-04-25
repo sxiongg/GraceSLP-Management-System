@@ -1,4 +1,3 @@
-// import { contacts } from './reducer';
 
 function ascendingSort(contact1, contact2) {
   const name1 = contact1.name ? contact1.name.toUpperCase() : '~';
@@ -7,14 +6,14 @@ function ascendingSort(contact1, contact2) {
 }
 
 
-const contactActions = {
-  ADD_CONTACT: 'ADD_CONTACT',
-  EDIT_CONTACT: 'EDIT_CONTACT',
-  DELETE__CONTACT: 'DELETE__CONTACT',
-  CHANGE_CONTACT: 'CHANGE_CONTACT',
+const employeeActions = {
+  ADD_EMPLOYEE: 'ADD_EMPLOYEE',
+  EDIT_EMPLOYEE: 'EDIT_EMPLOYEE',
+  DELETE__EMPLOYEE: 'DELETE__EMPLOYEE',
+  CHANGE_EMPLOYEE: 'CHANGE_EMPLOYEE',
   EDIT_VIEW: 'EDIT_VIEW',
   changeContact: (id) => ({
-    type: contactActions.CHANGE_CONTACT,
+    type: employeeActions.CHANGE_EMPLOYEE,
     id,
   }),
   addContact: () => {
@@ -31,7 +30,7 @@ const contactActions = {
     };
     return (dispatch, getState) => {
       dispatch({
-        type: contactActions.ADD_CONTACT,
+        type: employeeActions.ADD_EMPLOYEE,
         contacts: [...getState().Contacts.get('contacts'), newContact],
         selectedId: newContact.id,
       });
@@ -49,7 +48,7 @@ const contactActions = {
         }
       });
       dispatch({
-        type: contactActions.EDIT_CONTACT,
+        type: employeeActions.EDIT_EMPLOYEE,
         contacts: newContacts.sort(ascendingSort),
       });
     }
@@ -66,16 +65,16 @@ const contactActions = {
         }
       });
       dispatch({
-        type: contactActions.DELETE__CONTACT,
+        type: employeeActions.DELETE__EMPLOYEE,
         contacts: newContacts,
         selectedId: id === selectedId ? undefined : selectedId,
       });
     };
   },
   viewChange: (view) => ({
-    type: contactActions.EDIT_VIEW,
+    type: employeeActions.EDIT_VIEW,
     view,
   }),
 };
 
-export default contactActions;
+export default employeeActions;
