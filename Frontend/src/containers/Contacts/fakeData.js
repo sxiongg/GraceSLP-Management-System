@@ -1,5 +1,5 @@
 export const otherAttributes = [
-  { title: 'Number', value: 'number', type: 'number' },
+  { title: 'Phone', value: 'phone', type: 'string' },
   { title: 'Address', value: 'address', type: 'string' },
   { title: 'Email', value: 'email', type: 'string' },
   { title: 'DOB', value: 'dob', type: 'integer' },
