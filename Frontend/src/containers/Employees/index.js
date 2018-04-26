@@ -6,16 +6,14 @@ import Button from "../../components/uielements/button";
 import ContactList from "../../components/contacts/contactList";
 import SingleContactView from "../../components/contacts/singleView";
 import EditContactView from "../../components/contacts/editView";
-import DeleteButton from "../../components/contacts/deleteButton";
 import { otherAttributes } from "./fakeData";
-import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
 import axios from "axios";
 
 const {
   changeContact,
-  addContact,
+  // addContact,
   editContact,
   deleteContact,
   viewChange
@@ -46,7 +44,7 @@ componentDidMount() {
       selectedId,
       editView,
       changeContact,
-      addContact,
+      // addContact,
       editContact,
       deleteContact,
       viewChange
@@ -73,19 +71,7 @@ componentDidMount() {
           {selectedContact ? (
             <Content className="isoContactBox">
               <div className="isoContactControl">
-                <Button type="button" onClick={onVIewChange}>
-                  {editView ? <Icon type="check" /> : <Icon type="edit" />}{" "}
-                </Button>
-                <DeleteButton
-                  deleteContact={deleteContact}
-                  contact={selectedContact}
-                />
-                {/* <Button
-                  type="primary"
-                  className="isoAddContactBtn"
-                >
-                  <IntlMessages id="contactlist.addNewContact" />
-                </Button> */}
+                  {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
               </div>
 
               <Scrollbar className="contactBoxScrollbar">
@@ -105,13 +91,6 @@ componentDidMount() {
             </Content>
           ) : (
             <div className="isoContactControl">
-              {/* <Button
-                type="primary"
-                onClick={addContact}
-                className="isoAddContactBtn"
-              >
-                <IntlMessages id="contactlist.addNewContact" />
-              </Button> */}
             </div>
           )}
         </Layout>
@@ -134,7 +113,7 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps,{
   changeContact,
-  addContact,
+  // addContact,
   editContact,
   deleteContact,
   viewChange

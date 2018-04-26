@@ -24,10 +24,10 @@ class SignIn extends Component {
       else {
         axios.get('http://localhost:5000/api/employees/username/' + this.state.username)
           .then(response => {
-            if (response.status == 204) {
+            if (response.status === 204) {
               alert("Username does not exist.");
             }
-            else if (response.data.password == this.state.password) {
+            else if (response.data.password === this.state.password) {
               const { login } = this.props;
               login();
               console.log("success");

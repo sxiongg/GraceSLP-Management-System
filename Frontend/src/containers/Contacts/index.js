@@ -6,18 +6,15 @@ import Button from "../../components/uielements/button";
 import ContactList from "../../components/contacts/contactList";
 import SingleContactView from "../../components/contacts/singleView";
 import EditContactView from "../../components/contacts/editView";
-// import DeleteButton from "../../components/contacts/deleteButton";
 import { otherAttributes } from "./fakeData";
-import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
 import axios from "axios";
 
 const {
   changeContact,
-  addContact,
+  // addContact,
   editContact,
-  // deleteContact,
   viewChange
 } = contactAction;
 
@@ -49,9 +46,9 @@ componentDidMount() {
       selectedId,
       editView,
       changeContact,
-      addContact,
+      // addContact,
       editContact,
-      deleteContact,
+      // deleteContact,
       viewChange
     } = this.props;
 
@@ -76,11 +73,8 @@ componentDidMount() {
           {selectedContact ? (
             <Content className="isoContactBox">
               <div className="isoContactControl">
-                <Button type="button" onClick={onVIewChange}>
-                  {editView ? <Icon type="check" /> : <Icon type="edit" />}{" "}
-                </Button>
+                 {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
               </div>
-
               <Scrollbar className="contactBoxScrollbar">
                 {editView ? (
                   <EditContactView
@@ -95,7 +89,7 @@ componentDidMount() {
                   />
                 )}
               </Scrollbar>
-            </Content>
+              </Content>
           ) : (
             <div className="isoContactControl">
             </div>
@@ -120,7 +114,7 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps,{
   changeContact,
-  addContact,
+  // addContact,
   editContact,
   // deleteContact,
   viewChange
