@@ -24,10 +24,10 @@ class SignIn extends Component {
       else {
         axios.get('http://localhost:5000/api/employees/username/' + this.state.username)
           .then(response => {
-            if (response.status == 204) {
+            if (response.status === 204) {
               alert("Username does not exist.");
             }
-            else if (response.data.password == this.state.password) {
+            else if (response.data.password === this.state.password) {
               const { login } = this.props;
               login();
               console.log("success");
@@ -75,14 +75,6 @@ class SignIn extends Component {
                   <IntlMessages id="page.signInForgotPass" />
                 </Link>
               </div>
-<<<<<<< HEAD
-
-              {/* <p className="isoHelperText">
-                <IntlMessages id="page.signInPreview" />
-              </p> */}
-
-=======
->>>>>>> 6c472d09078ba4a803b240f472ce7eb5f2110475
             </div>
           </div>
         </div>

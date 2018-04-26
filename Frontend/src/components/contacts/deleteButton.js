@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Popconfirm from '../feedback/popconfirm';
 import Button from '../uielements/button';
 import notification from '../notification';
@@ -21,6 +22,7 @@ export default class extends Component {
       name = 'No Name';
     }
     return (
+      <Link to="/dashboard">
       <Popconfirm
         title={`Sure to delete ${name}?`}
         okText="DELETE"
@@ -34,8 +36,8 @@ export default class extends Component {
             })
         }}
       >
-        <Button icon="close" type="button" className="isoDeleteBtn"/>
-      </Popconfirm >
+       <Button icon="close" type="button" className="isoDeleteBtn"/>
+      </Popconfirm ></Link>
     );
 
 

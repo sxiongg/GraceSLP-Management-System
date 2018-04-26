@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
-// import { Icon } from 'antd';
 import Input, { Textarea } from '../uielements/input';
-// import Upload from '../uielements/upload';
-// import notification from '../notification';
 import { ContactCardWrapper } from './contactCard.style';
+import { Link } from 'react-router-dom';
 import Button from '../../components/uielements/button';
 import './upload.css';
+import axios from 'axios';
 
-// function beforeUpload(file) {
-//   const isJPG = file.type === 'image/jpeg';
-//   if (!isJPG) {
-//     notification('error', 'You can only upload JPG file!', '');
-//     return false;
-//   }
-//   const isLt2M = file.size / 1024 / 1024 < 2;
-//   if (!isLt2M) {
-//     notification('error', 'Image must smaller than 2MB!', '');
-//     return false;
-//   }
-//   notification('success', 'Image uploaded successfully!', '');
-//   return true;
-// }
 
 export default class extends Component {
+
+  saveChanges = () => {
+    alert("Changes Saved");
+
+    var found = false;
+
+    for (var i = 0; i < this.props.otherAttributes.length; i++) {
+
+      if (this.props.otherAttributes[i].title === "Position") {
+        console.log('found employee')
+        console.log(this.props.contact)
+        axios.put('http://localhost:5000/api/employees/' + this.props.contact.id, this.props.contact)
+        found = true;
+      }
+      else if (!found) {
+        console.log('found patient')
+        axios.put('http://localhost:5000/api/patients/' + this.props.contact.id, this.props.contact)
+        break;
+      }
+    }
+  }
+
   render() {
     const { contact, otherAttributes } = this.props;
-    const name = contact.firstName ? contact.name : 'No Name';
     const extraInfos = [];
     const names = [
       { value: 'firstName', title: 'First Name' },
@@ -75,8 +81,8 @@ export default class extends Component {
       <ContactCardWrapper className="isoContactCard">
         <div className="isoContactCardHead">
           <h1 className="isoPersonName">{contact.firstName} {contact.lastName}</h1>
-          <Button style={{ marginTop: "25px" }} type="primary" onClick={this.saveChanges}> Submit Changes
-          </Button>
+          <Link to="/dashboard"><Button style={{ marginTop: "25px" }} type="primary" onClick={this.saveChanges}> Submit Changes
+          </Button></Link>
         </div>
         <div className="isoContactInfoWrapper">{extraInfos}</div>
       </ContactCardWrapper>

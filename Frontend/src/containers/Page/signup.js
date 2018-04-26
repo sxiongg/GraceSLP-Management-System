@@ -12,8 +12,8 @@ import IntlMessages from '../../components/utility/intlMessages';
 import SignUpStyleWrapper from './signup.style';
 import axios from 'axios';
 import Checkbox from '../../components/uielements/checkbox';
-import Select, { SelectOption } from '../../components/uielements/select';
-const Option = SelectOption;
+// import { SelectOption } from '../../components/uielements/select';
+// const Option = SelectOption;
 
 
 // const { login } = authAction;
@@ -30,7 +30,8 @@ class SignUp extends Component {
     daysAvailable: "",
     startTime: "",
     endTime: "",
-    isAdmin: false
+    isAdmin: false,
+    locationId: 1
   };
 
   handleLogin = () => {
@@ -40,20 +41,33 @@ class SignUp extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
+        password: this.state.password,
         username: this.state.username,
         position: this.state.position,
         isAdmin: this.state.isAdmin,
         daysAvailable: this.state.daysAvailable,
         startTime: this.state.startTime,
         endTime: this.state.endTime,
+        locationId: this.state.locationId
       };
 
-      axios.post('http://localhost:5000/api/employees', newAccount, {
+
+      let headers = {
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        },
-      })
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'}
+      }
+ 
+      console.log(newAccount);
+ 
+      axios.post('http://localhost:5000/api/employees', newAccount, headers)
+
+      // axios.post('http://localhost:5000/api/employees', newAccount, {
+      //   headers: {
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Content-Type': 'application/json'
+      //   },
+      // })
     //   ).then(
     //     response => {
     //       if (response.status === 200) {
