@@ -18,8 +18,10 @@ export default class ContactList extends Component {
     super(props);
     this.singleContact = this.singleContact.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.btnClick = this.btnClick.bind(this);
     this.state = {
-      search: ''
+      search: '',
+      redirect: false
     };
   }
 
@@ -37,10 +39,17 @@ export default class ContactList extends Component {
         <div className="isoContactName">
           <h3>{contact.firstName ? contact.firstName + " " + contact.lastName : 'No Name'}</h3>
         </div>
-        <DeleteButton deleteContact={deleteContact} contact={contact} />
+        <DeleteButton contact={contact} onClick={this.btnClick} />
       </div>
     );
   }
+
+  btnClick() {
+    this.setState({ redirect: true });
+    console.log("hey")
+  }
+
+
   onChange(event) {
     this.setState({ search: event.target.value });
   }

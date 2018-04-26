@@ -1,4 +1,4 @@
-// import { contacts } from './reducer';
+
 
 function ascendingSort(contact1, contact2) {
   const name1 = contact1.name ? contact1.name.toUpperCase() : '~';

@@ -67,44 +67,11 @@ class SignUp extends Component {
                 />
               </div>
 
-              {/* // <div className="isoInputWrapper" style={{ marginBottom: '50px' }}>
-              //   <Checkbox>
-              //     <IntlMessages id="page.signUpTermsConditions" />
-              //   </Checkbox>
-              // </div> */}
-
               <div className="isoInputWrapper">
                 <Button type="primary">
                   <IntlMessages id="page.signUpButton" />
                 </Button>
               </div>
-              {/* <div className="isoInputWrapper isoOtherLogin"> */}
-                {/* <Button onClick={this.handleLogin} type="primary btnFacebook">
-                  <IntlMessages id="page.signUpFacebook" />
-                </Button>
-                <Button onClick={this.handleLogin} type="primary btnGooglePlus">
-                  <IntlMessages id="page.signUpGooglePlus" />
-                </Button> */}
-                {/* {Auth0.isValid && (
-                  <Button
-                    onClick={() => {
-                      Auth0.login(this.handleLogin);
-                    }}
-                    type="primary btnAuthZero"
-                  >
-                    <IntlMessages id="page.signUpAuth0" />
-                  </Button>
-                )}
-
-                {Firebase.isValid && (
-                  <FirebaseLogin signup={true} login={this.handleLogin} />
-                )}
-              </div> */}
-              {/* <div className="isoInputWrapper isoCenterComponent isoHelperWrapper">
-                <Link to="/signin">
-                  <IntlMessages id="page.signUpAlreadyAccount" />
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>

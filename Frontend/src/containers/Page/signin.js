@@ -29,16 +29,16 @@ class SignIn extends Component {
   // }
 
   handleLogin = () => {
-    if (this.state.username == "" || this.state.password == "") {
+    if (this.state.username === "" || this.state.password === "") {
       alert("Enter user information!")
     }
     else {
       axios.get('http://localhost:5000/api/employees/username/' + this.state.username)
       .then(response => {
-        if (response.status == 204) {
+        if (response.status === 204) {
             alert("Username does not exist.");
         }
-        else if (response.data.password == this.state.password) {
+        else if (response.data.password === this.state.password) {
             this.props.history.push("/dashboard");
         }
         else {
@@ -91,34 +91,6 @@ class SignIn extends Component {
                 <IntlMessages id="page.signInPreview" />
               </p> */}
 
-              {/* <div className="isoInputWrapper isoOtherLogin"> */}
-                {/* <Button onClick={this.handleLogin} type="primary btnFacebook">
-                  <IntlMessages id="page.signInFacebook" />
-                </Button>
-                <Button onClick={this.handleLogin} type="primary btnGooglePlus">
-                  <IntlMessages id="page.signInGooglePlus" />
-                </Button> */}
-
-                {/* {Auth0.isValid &&
-                  <Button
-                    onClick={() => {
-                      Auth0.login(this.handleLogin);
-                    }}
-                    type="primary btnAuthZero"
-                  >
-                    <IntlMessages id="page.signInAuth0" />
-                  </Button>} */}
-
-                {/* {Firebase.isValid && <FirebaseLogin login={this.handleLogin} />} */}
-              {/* </div> */}
-              {/* <div className="isoCenterComponent isoHelperWrapper"> */}
-                {/* <Link to="/forgotpassword" className="isoForgotPass">
-                  <IntlMessages id="page.signInForgotPass" />
-                </Link> */}
-                {/* <Link to="/signup">
-                  <IntlMessages id="page.signInCreateAccount" />
-                </Link> */}
-              {/* </div> */}
             </div>
           </div>
         </div>

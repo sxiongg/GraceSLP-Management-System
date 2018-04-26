@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import { Icon } from 'antd';
+// import { Icon } from 'antd';
 import Input, { Textarea } from '../uielements/input';
-import Upload from '../uielements/upload';
-import notification from '../notification';
+// import Upload from '../uielements/upload';
+// import notification from '../notification';
 import { ContactCardWrapper } from './contactCard.style';
+import Button from '../../components/uielements/button';
 import './upload.css';
 
-function beforeUpload(file) {
-  const isJPG = file.type === 'image/jpeg';
-  if (!isJPG) {
-    notification('error', 'You can only upload JPG file!', '');
-    return false;
-  }
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    notification('error', 'Image must smaller than 2MB!', '');
-    return false;
-  }
-  notification('success', 'Image uploaded successfully!', '');
-  return true;
-}
+// function beforeUpload(file) {
+//   const isJPG = file.type === 'image/jpeg';
+//   if (!isJPG) {
+//     notification('error', 'You can only upload JPG file!', '');
+//     return false;
+//   }
+//   const isLt2M = file.size / 1024 / 1024 < 2;
+//   if (!isLt2M) {
+//     notification('error', 'Image must smaller than 2MB!', '');
+//     return false;
+//   }
+//   notification('success', 'Image uploaded successfully!', '');
+//   return true;
+// }
 
 export default class extends Component {
   render() {
     const { contact, otherAttributes } = this.props;
-    const name = contact.name ? contact.name : 'No Name';
+    const name = contact.firstName ? contact.name : 'No Name';
     const extraInfos = [];
     const names = [
       { value: 'firstName', title: 'First Name' },
@@ -73,23 +74,9 @@ export default class extends Component {
     return (
       <ContactCardWrapper className="isoContactCard">
         <div className="isoContactCardHead">
-          <div className="isoPersonImage">
-            <Upload
-              className="avatar-uploader"
-              name="avatar"
-              showUploadList={false}
-              beforeUpload={beforeUpload}
-              action=""
-            >
-              {contact.avatar ? (
-                <img src={contact.avatar} alt="" className="avatar" />
-              ) : (
-                ''
-              )}
-              <Icon type="plus" className="avatar-uploader-trigger" />
-            </Upload>
-          </div>
-          <h1 className="isoPersonName">{name}</h1>
+          <h1 className="isoPersonName">{contact.firstName} {contact.lastName}</h1>
+          <Button style={{ marginTop: "25px" }} type="primary" onClick={this.saveChanges}> Submit Changes
+          </Button>
         </div>
         <div className="isoContactInfoWrapper">{extraInfos}</div>
       </ContactCardWrapper>

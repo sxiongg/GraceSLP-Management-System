@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import contactAction from "../../redux/employees/actions";
+import contactAction from "../../redux/contacts/actions";
 import { Layout, Icon } from "antd";
 import Button from "../../components/uielements/button";
-import ContactList from "../../components/employees/contactList";
-import SingleContactView from "../../components/employees/singleView";
-import EditContactView from "../../components/employees/editView";
-import DeleteButton from "../../components/employees/deleteButton";
+import ContactList from "../../components/contacts/contactList";
+import SingleContactView from "../../components/contacts/singleView";
+import EditContactView from "../../components/contacts/editView";
+import DeleteButton from "../../components/contacts/deleteButton";
 import { otherAttributes } from "./fakeData";
 import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
+import axios from "axios";
 
 const {
   changeContact,
@@ -21,10 +22,27 @@ const {
 } = contactAction;
 
 const { Content } = Layout;
-class Contacts extends Component {
+class Employees extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        employees: []
+    }
+}
+
+componentDidMount() {
+  axios.get('http://localhost:5000/api/employees')
+  .then(response => {
+      console.log (response.data);
+
+      this.setState ({ employees: response.data })
+  })
+}
+
+
   render() {
     const {
-      contacts,
       selectedId,
       editView,
       changeContact,
@@ -35,7 +53,7 @@ class Contacts extends Component {
     } = this.props;
 
     const selectedContact = selectedId
-      ? contacts.filter(contact => contact.id === selectedId)[0]
+      ? this.state.employees.filter(contact => contact.id === selectedId)[0]
       :null;
     const onVIewChange = () => viewChange(!editView);
     return (
@@ -45,7 +63,7 @@ class Contacts extends Component {
       >
         <div className="isoContactListBar">
           <ContactList
-            contacts={contacts}
+            contacts={this.state.employees}
             selectedId={selectedId}
             changeContact={changeContact}
             deleteContact={deleteContact}
@@ -62,13 +80,12 @@ class Contacts extends Component {
                   deleteContact={deleteContact}
                   contact={selectedContact}
                 />
-                <Button
+                {/* <Button
                   type="primary"
-                  onClick={addContact}
                   className="isoAddContactBtn"
                 >
                   <IntlMessages id="contactlist.addNewContact" />
-                </Button>
+                </Button> */}
               </div>
 
               <Scrollbar className="contactBoxScrollbar">
@@ -88,13 +105,13 @@ class Contacts extends Component {
             </Content>
           ) : (
             <div className="isoContactControl">
-              <Button
+              {/* <Button
                 type="primary"
                 onClick={addContact}
                 className="isoAddContactBtn"
               >
                 <IntlMessages id="contactlist.addNewContact" />
-              </Button>
+              </Button> */}
             </div>
           )}
         </Layout>
@@ -102,6 +119,8 @@ class Contacts extends Component {
     );
   }
 }
+
+
 
 function mapStateToProps(state) {
   const { contacts, selectedId, editView } = state.Contacts.toJS();
@@ -113,10 +132,10 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps,{
   changeContact,
   addContact,
   editContact,
   deleteContact,
   viewChange
-})(Contacts);
+} )(Employees);

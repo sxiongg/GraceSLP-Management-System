@@ -9,17 +9,17 @@ const options = [
   {
     key: "patients",
     label: "sidebar.contacts",
-    leftIcon: "ion-android-person-add"
+    leftIcon: "ion-android-people"
   },
   {
     key: "employees",
     label: "sidebar.employees",
-    leftIcon: ""
+    leftIcon: "ion-briefcase"
   },
   {
     key: "add-account",
     label: "sidebar.addAccount",
-    leftIcon: ""
+    leftIcon: "ion-android-person-add",
   },
   // {
   //   key: "mailbox",

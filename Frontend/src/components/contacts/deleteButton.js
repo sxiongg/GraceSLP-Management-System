@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import Popconfirm from '../feedback/popconfirm';
 import Button from '../uielements/button';
 import notification from '../notification';
+import axios from 'axios';
+
 
 export default class extends Component {
+
   render() {
-    const { contact, deleteContact } = this.props;
+
+    const { contact } = this.props;
     let name = '';
     if (contact.firstName) {
       name = `${contact.firstName} `;
@@ -22,12 +26,19 @@ export default class extends Component {
         okText="DELETE"
         cancelText="No"
         onConfirm={() => {
+
           notification('error', `${name} Deleted`, '');
-          deleteContact(contact.id);
+          axios.delete('http://localhost:5000/api/patients/' + contact.id)
+            .then((response) => {
+              console.log(response);
+            })
         }}
       >
-        <Button icon="close" type="button" className="isoDeleteBtn" />
-      </Popconfirm>
+        <Button icon="close" type="button" className="isoDeleteBtn"/>
+      </Popconfirm >
     );
+
+
+
   }
 }

@@ -6,20 +6,18 @@ import Button from "../../components/uielements/button";
 import ContactList from "../../components/contacts/contactList";
 import SingleContactView from "../../components/contacts/singleView";
 import EditContactView from "../../components/contacts/editView";
-import DeleteButton from "../../components/contacts/deleteButton";
+// import DeleteButton from "../../components/contacts/deleteButton";
 import { otherAttributes } from "./fakeData";
 import IntlMessages from "../../components/utility/intlMessages";
 import { ContactsWrapper } from "./contacts.style";
 import Scrollbar from "../../components/utility/customScrollBar.js";
 import axios from "axios";
 
-import { push } from '../../redux/contacts/actions'
-
 const {
   changeContact,
   addContact,
   editContact,
-  deleteContact,
+  // deleteContact,
   viewChange
 } = contactAction;
 
@@ -75,7 +73,7 @@ addContact() {
             contacts={this.state.contacts}
             selectedId={selectedId}
             changeContact={changeContact}
-            deleteContact={deleteContact}
+            // deleteContact={deleteContact}
           />
         </div>
         <Layout className="isoContactBoxWrapper">
@@ -85,10 +83,7 @@ addContact() {
                 <Button type="button" onClick={onVIewChange}>
                   {editView ? <Icon type="check" /> : <Icon type="edit" />}{" "}
                 </Button>
-                <DeleteButton
-                  deleteContact={deleteContact}
-                  contact={selectedContact}
-                />
+
                 <Button
                   type="primary"
                   onClick={this.addContact.bind(this)}
@@ -130,10 +125,6 @@ addContact() {
   }
 }
 
-function addContactToDB () {
-  console.log ("hey")
-}
-
 
 
 function mapStateToProps(state) {
@@ -150,6 +141,6 @@ export default connect(mapStateToProps,{
   changeContact,
   addContact,
   editContact,
-  deleteContact,
+  // deleteContact,
   viewChange
 } )(Contacts);
