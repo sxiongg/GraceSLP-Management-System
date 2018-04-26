@@ -1,4 +1,6 @@
 {
+  "sidebar.addEmployee": "Add Employee",
+  "sidebar.addPatient": "Add Patient",
   "sidebar.employees": "Employees",
   "sidebar.addAccount": "Add Account",
   "sidebar.email": "Email",

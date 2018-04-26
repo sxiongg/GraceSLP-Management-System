@@ -12,14 +12,19 @@ const options = [
     leftIcon: "ion-android-people"
   },
   {
+    key: "add-patient",
+    label: "sidebar.addPatient",
+    leftIcon: "ion-android-people"
+  },
+  {
     key: "employees",
     label: "sidebar.employees",
-    leftIcon: "ion-briefcase"
-  },
+    leftIcon: "ion-briefcase",
+   },
   {
     key: "add-account",
     label: "sidebar.addAccount",
-    leftIcon: "ion-android-person-add",
+    leftIcon: "ion-android-person-add"
   },
   // {
   //   key: "mailbox",

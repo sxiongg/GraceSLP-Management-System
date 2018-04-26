@@ -44,10 +44,6 @@ componentDidMount() {
   })
 }
 
-addContact() {
-  console.log ('hello')
-}
-
   render() {
     const {
       selectedId,
@@ -83,14 +79,6 @@ addContact() {
                 <Button type="button" onClick={onVIewChange}>
                   {editView ? <Icon type="check" /> : <Icon type="edit" />}{" "}
                 </Button>
-
-                <Button
-                  type="primary"
-                  onClick={this.addContact.bind(this)}
-                  className="isoAddContactBtn"
-                >
-                  <IntlMessages id="contactlist.addNewContact" />
-                </Button>
               </div>
 
               <Scrollbar className="contactBoxScrollbar">
@@ -110,13 +98,6 @@ addContact() {
             </Content>
           ) : (
             <div className="isoContactControl">
-              <Button
-                type="primary"
-                onClick={addContact}
-                className="isoAddContactBtn"
-              >
-                <IntlMessages id="contactlist.addNewContact" />
-              </Button>
             </div>
           )}
         </Layout>

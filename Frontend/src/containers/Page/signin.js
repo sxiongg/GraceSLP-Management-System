@@ -75,14 +75,6 @@ class SignIn extends Component {
                   <IntlMessages id="page.signInForgotPass" />
                 </Link>
               </div>
-<<<<<<< HEAD
-
-              {/* <p className="isoHelperText">
-                <IntlMessages id="page.signInPreview" />
-              </p> */}
-
-=======
->>>>>>> 6c472d09078ba4a803b240f472ce7eb5f2110475
             </div>
           </div>
         </div>

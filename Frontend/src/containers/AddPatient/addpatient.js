@@ -1,86 +1,21 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';import IntlMessages from '../../components/utility/intlMessages';
+import SignUpStyleWrapper from '../Page/signup.style';
 import Input from '../../components/uielements/input';
-// import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
-// import authAction from '../../redux/auth/actions';
-// import Auth0 from '../../helpers/auth0/index';
-// import Firebase from '../../helpers/firebase';
-// import  FirebaseLogin from '../../components/firebase';
-import IntlMessages from '../../components/utility/intlMessages';
-import SignUpStyleWrapper from './signup.style';
 import axios from 'axios';
 import Checkbox from '../../components/uielements/checkbox';
 import Select, { SelectOption } from '../../components/uielements/select';
 const Option = SelectOption;
 
-
-// const { login } = authAction;
-
-class SignUp extends Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    password: "",
-    verifyPassword: "",
-    email: "",
-    position: "",
-    daysAvailable: "",
-    startTime: "00:00:00",
-    endTime: "00:00:00",
-    isAdmin: false,
-    locationId: 0
-  };
-
-  handleLogin = () => {
-
-    if (this.state.password === this.state.verifyPassword) {
-      let newAccount = {
-        FirstName: this.state.firstName,
-        LastName: this.state.lastName,
-        Email: this.state.email,
-        Username: this.state.username,
-        Password: this.state.password,
-        Position: this.state.position,
-        IsAdmin: this.state.isAdmin,
-        DaysAvailable: this.state.daysAvailable,
-        StartTime: this.state.startTime,
-        EndTime: this.state.endTime,
-        LocationId: this.state.locationId
-      };
-
-      let headers = {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        }
-      }
-
-      console.log(newAccount);
-
-      axios.post('http://localhost:5000/api/employees', newAccount, headers)
-        .then(
-          response => {
-            if (response.status === 200) {
-              alert("Account created.")
-            }
-            else {
-              alert("Account was not created. Please try again.")
-            }
-          }
-        )
+class AddPatient extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
     }
-    else {
-      alert("Passwords do not match.");
-    }
-
-  };
-
-  render() {
-    return (
-      <SignUpStyleWrapper className="isoSignUpPage">
+    render() {
+        return (
+            <SignUpStyleWrapper className="isoSignUpPage">
         <div className="isoSignUpContentWrapper">
           <div className="isoSignUpContent">
             <div className="isoLogoWrapper">
@@ -121,14 +56,14 @@ class SignUp extends Component {
               </div>
 
               <div className="isoInputWrapper isoLeftRightComponent">
+                <Checkbox value={this.state.isAdmin} onChange={(e) => this.setState({ isAdmin: true })}>Admin</Checkbox>
                 <Select
                   defaultValue="Location"
                   onChange={(e) => this.setState({ locationId: e })}
-                  style={{ width: '50%' }}
+                  style={{ width: '300px' }}
                 >
                   <Option value="1">Location 1</Option>
                 </Select>
-                <Checkbox value={this.state.isAdmin} onChange={(e) => this.setState({ isAdmin: true })}>Admin</Checkbox>
               </div>
 
               <p>Schedule</p>
@@ -156,8 +91,8 @@ class SignUp extends Component {
           </div>
         </div>
       </SignUpStyleWrapper>
-    );
-  }
+        )
+    }
 }
 
-export default SignUp;
+export default AddPatient;
