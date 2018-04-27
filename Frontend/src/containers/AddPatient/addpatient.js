@@ -4,14 +4,58 @@ import SignUpStyleWrapper from '../Page/signup.style';
 import Input from '../../components/uielements/input';
 import Button from '../../components/uielements/button';
 import axios from 'axios';
-import Checkbox from '../../components/uielements/checkbox';
 import Select, { SelectOption } from '../../components/uielements/select';
 const Option = SelectOption;
 
 class AddPatient extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
+        state = {
+          firstName: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          address: "",
+          doctorNotes: [],
+          dob: "",
+          doctorId: 0,
+          locationId: 0,
+          appointments: []
+        };
+
+    postPatient = () => {
+      let newPatient = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        phone: this.state.phone,
+        email: this.state.email,
+        address: this.state.address,
+        dob: this.state.dob,
+        doctorId: this.state.doctorId,
+        locationId: this.state.locationId,
+        doctorNotes: this.state.doctorNotes,
+        appointments: this.state.appointments,
+      }
+
+      let headers = {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        }
+      }
+
+      console.log(newPatient);
+
+      axios.post('http://localhost:5000/api/patients', newPatient, headers)
+        .then(
+          response => {
+            if (response.status == 200) {
+              alert("Added new patient.")
+            }
+            else {
+              alert("Patient was not added. Please try again.")
+            }
+          }).catch(
+            alert("Patient was not added. Please try again.")
+          )
     }
     render() {
         return (
@@ -20,7 +64,7 @@ class AddPatient extends Component {
           <div className="isoSignUpContent">
             <div className="isoLogoWrapper">
               <Link to="/dashboard">
-                <IntlMessages id="page.signUpTitle" />
+                <IntlMessages id="page.newPatient" />
               </Link>
             </div>
 
@@ -31,7 +75,7 @@ class AddPatient extends Component {
               </div>
 
               <div className="isoInputWrapper">
-                <Input value={this.state.username} onChange={(e) => this.setState({ username: e.target.value })} size="large" placeholder="Username" />
+                <Input value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} size="large" placeholder="Phone" />
               </div>
 
               <div className="isoInputWrapper">
@@ -39,52 +83,39 @@ class AddPatient extends Component {
               </div>
 
               <div className="isoInputWrapper">
-                <Input value={this.state.password} onChange={(e) => this.setState({ password: e.target.value })} size="large" type="password" placeholder="Password" />
+                <Input value={this.state.address} onChange={(e) => this.setState({ address: e.target.value })} size="large" placeholder="Address" />
               </div>
 
               <div className="isoInputWrapper">
                 <Input
-                  value={this.state.verifyPassword} onChange={(e) => this.setState({ verifyPassword: e.target.value })}
-                  size="large"
-                  type="password"
-                  placeholder="Confirm Password"
+                  value={this.state.dob} onChange={(e) => this.setState({ dob: e.target.value })}
+                  size="large" placeholder="DOB YYYY-MM-DD"
                 />
               </div>
 
-              <div className="isoInputWrapper">
-                <Input value={this.state.position} onChange={(e) => this.setState({ position: e.target.value })} size="large" placeholder="Position" />
+              <div className="isoInputWrapper isoLeftRightComponent">
+                <Select
+                  defaultValue="Doctor"
+                  onChange={(e) => this.setState({ doctorId: e })}
+                  style={{ width: '100%' }}
+                >
+                  <Option value="1">Dr. Grace</Option>
+                </Select>
               </div>
 
-              <div className="isoInputWrapper isoLeftRightComponent">
-                <Checkbox value={this.state.isAdmin} onChange={(e) => this.setState({ isAdmin: true })}>Admin</Checkbox>
-                <Select
+              <div className="isoInputWrapper">
+              <Select
                   defaultValue="Location"
                   onChange={(e) => this.setState({ locationId: e })}
-                  style={{ width: '300px' }}
+                  style={{ width: '100%' }}
                 >
                   <Option value="1">Location 1</Option>
                 </Select>
               </div>
 
-              <p>Schedule</p>
               <div className="isoInputWrapper">
-                <Input
-                  value={this.state.daysAvailable} onChange={(e) => this.setState({ daysAvailable: e.target.value })}
-                  size="large"
-                  placeholder="Days Available"
-                />
-              </div>
-
-              <div className="isoInputWrapper isoLeftRightComponent">
-                <p>Start Time</p>
-                <Input value={this.state.startTime} onChange={(e) => this.setState({ startTime: e.target.value })} size="large" type="time" placeholder="Start Time" />
-                <p>End Time</p>
-                <Input value={this.state.endTime} onChange={(e) => this.setState({ endTime: e.target.value })} size="large" type="time" placeholder="End Time" />
-              </div>
-
-              <div className="isoInputWrapper">
-                <Button onClick={this.handleLogin} type="primary">
-                  <IntlMessages id="page.signUpButton" />
+                <Button onClick={this.postPatient} type="primary">
+                  <IntlMessages id="sidebar.addPatient" />
                 </Button>
               </div>
             </div>
