@@ -41,10 +41,6 @@ componentDidMount() {
   })
 }
 
-addContact() {
-  console.log ('hello')
-}
-
   render() {
     const {
       selectedId,

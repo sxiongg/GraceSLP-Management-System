@@ -17,6 +17,10 @@ const routes = [
     component: asyncComponent(() => import('../../containers/Page/signup'))
   },
   {
+    path: "add-patient",
+    component: asyncComponent(() => import("../AddPatient/addpatient"))
+  },
+  {
     path: "table_ant",
     component: asyncComponent(() => import("../Tables/antTables"))
   },
