@@ -9,7 +9,7 @@ export default ({ collapsed }) => {
         <div>
           <h3>
             <Link to="./">
-              <i className={siteConfig.siteIcon} />
+              <i/>
             </Link>
           </h3>
         </div>
