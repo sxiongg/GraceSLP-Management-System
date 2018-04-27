@@ -4,8 +4,10 @@ import Input from '../../components/uielements/input';
 import { DateRangepicker } from '../../components/uielements/datePicker';
 import Modal from '../../components/feedback/modal';
 import { CalendarModalBody } from './calendar.style';
-
 import DeleteButton from './deleteButton';
+import Select, { SelectOption } from '../../components/uielements/select';
+const Option = SelectOption;
+
 const RangePicker = DateRangepicker;
 
 const localeDatePicker = {
@@ -73,7 +75,7 @@ export default class extends Component {
       setModalData('updateValue', selectedData);
     };
     const onChangeDesc = event => {
-      selectedData.desc = event.target.value;
+      selectedData.desc = event;
       setModalData('updateValue', selectedData);
     };
     const onChangeFromTimePicker = value => {
@@ -103,11 +105,13 @@ export default class extends Component {
             </div>
 
             <div className="isoCalendarInputWrapper">
-              <Input
-                value={desc}
-                placeholder="Doctor"
-                onChange={onChangeDesc}
-              />
+            <Select
+                  defaultValue="Doctor"
+                  onChange={onChangeDesc}
+                  style={{ width: '100%' }}
+                >
+                  <Option value="1">Dr. Grace</Option>
+                </Select>
             </div>
 
             <div className="isoCalendarDatePicker">

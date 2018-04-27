@@ -17,19 +17,17 @@ class FullCalender extends Component {
   state = {
     view: this.props.view,
     modalVisible: false,
-    selectedData: undefined
+    selectedData: undefined,
+    events: []
   };
 
-  
-
   componentDidMount() {
-
     axios.get('http://localhost:5000/api/appointments')
     .then(response => {
       console.log (response.data);
-
-      otherAttributes = (response.data[0])
-
+      this.setState({events: response.data});
+      console.log(this.state.events)
+      // otherAttributes = (response.data[0])
     })
   }
 
@@ -44,7 +42,7 @@ class FullCalender extends Component {
   };
   onEventDrop = newOption => {
     const { event, start, end } = newOption;
-    const events = clone(this.props.events);
+    const events = clone(this.state.events);
     const allDay = new Date(end).getTime() !== new Date(start).getTime();
     const updatedEvent = { ...event, start, end, allDay };
     const index = getIndex(events, updatedEvent);
@@ -58,7 +56,7 @@ class FullCalender extends Component {
   };
   setModalData = (type, selectedData) => {
     const { changeEvents } = this.props;
-    const events = clone(this.props.events);
+    const events = clone(this.state.events);
     const { modalVisible } = this.state;
     if (type === 'cancel') {
       this.setState({
@@ -88,14 +86,22 @@ class FullCalender extends Component {
           }
         }
 
-        axios.post('http://localhost:5000/api/appointments', selectedData, headers)
+        let newAppt = {
+          date: selectedData.start.toJSON().substring(0, selectedData.start.toJSON().length-2),
+          time: selectedData.start.toLocaleTimeString().substring(0, selectedData.start.toLocaleTimeString().length-3),
+          notes: selectedData.title,
+          patientId: 1,
+          doctorId: selectedData.desc,
+          locationId: 1
+        }
+        axios.post('http://localhost:5000/api/appointments', newAppt, headers)
         .then(response => {
           console.log(response.data);
           console.log(selectedData);
-          console.log(selectedData.start.toString().substring(0, 10));
+          console.log(selectedData.start.toLocaleTimeString().substring(0, selectedData.start.toLocaleTimeString().length-3));
+          console.log(selectedData.start.toJSON().substring(0, selectedData.start.toJSON().length-2));
+          console.log(selectedData.start.toJSON());
         })
-
-
 
       } else {
         const index = getIndex(events, selectedData);
