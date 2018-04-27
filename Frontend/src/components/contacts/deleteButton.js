@@ -11,6 +11,7 @@ export default class extends Component {
   render() {
 
     const { contact } = this.props;
+
     let name = '';
     if (contact.firstName) {
       name = `${contact.firstName} `;
@@ -23,21 +24,36 @@ export default class extends Component {
     }
     return (
       <Link to="/dashboard">
-      <Popconfirm
-        title={`Sure to delete ${name}?`}
-        okText="DELETE"
-        cancelText="No"
-        onConfirm={() => {
+        <Popconfirm
+          title={`Sure to delete ${name}?`}
+          okText="DELETE"
+          cancelText="No"
+          onConfirm={() => {
 
-          notification('error', `${name} Deleted`, '');
-          axios.delete('http://localhost:5000/api/patients/' + contact.id)
-            .then((response) => {
-              console.log(response);
-            })
-        }}
-      >
-       <Button icon="close" type="button" className="isoDeleteBtn"/>
-      </Popconfirm ></Link>
+            notification('error', `${name} Deleted`, '');
+
+            var found = false;
+
+            if (contact.password) {
+              console.log("employee");
+              axios.delete('http://localhost:5000/api/employees/' + contact.id)
+                .then((response) => {
+                  console.log(response);
+                })
+              found = true;
+            }
+            else if (!found) {
+              console.log("patient");
+              axios.delete('http://localhost:5000/api/patients/' + contact.id)
+                .then((response) => {
+                  console.log(response);
+                })
+            }
+          }
+          }
+        >
+          <Button icon="close" type="button" className="isoDeleteBtn" />
+        </Popconfirm ></Link>
     );
 
 

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,11 +44,39 @@ namespace GraceSLP
         [HttpPost]
         public Employee PostNewEmployee([FromBody]Employee employee)
         {
+            PasswordHasher<Employee> hasher = new PasswordHasher<Employee>();
+            employee.Password = hasher.HashPassword(employee, employee.Password);
+
+            Console.WriteLine(employee);
             _context.Employee.Add(employee);
             _context.SaveChanges();
+            
 
             return employee;
         }
+
+        [HttpPost("verify/{username}/{password}")]
+        public string VerifyPassword ( string password , string username)
+        {
+            var e = _context.Employee.FirstOrDefault(employee => employee.Username == username);
+
+            PasswordHasher<Employee> hasher = new PasswordHasher<Employee>();
+
+            var result = hasher.VerifyHashedPassword(e, e.Password, password);
+            var success = result.ToString();
+
+            if (success == "Success")
+            {
+                Console.WriteLine("Verified");
+                return "success";
+            }
+            else 
+            {
+                return "failed";
+            }
+        }
+
+
 
         [HttpPut("{id}")]
         public Employee PutEmployeeInfo(int id, [FromBody]Employee employee)
@@ -56,6 +86,8 @@ namespace GraceSLP
 
             return employee;
         }
+
+
 
         [HttpDelete("{id}")]
         public void DeleteEmployee(int id)
