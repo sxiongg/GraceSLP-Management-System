@@ -4,8 +4,10 @@ import Input from '../../components/uielements/input';
 import { DateRangepicker } from '../../components/uielements/datePicker';
 import Modal from '../../components/feedback/modal';
 import { CalendarModalBody } from './calendar.style';
-
 import DeleteButton from './deleteButton';
+import Select, { SelectOption } from '../../components/uielements/select';
+const Option = SelectOption;
+
 const RangePicker = DateRangepicker;
 
 const localeDatePicker = {
@@ -47,6 +49,7 @@ export default class extends Component {
   handleOk = () => {
     this.props.setModalData('ok', this.props.selectedData);
   };
+
   handleCancel = () => {
     this.props.setModalData('cancel');
   };
@@ -54,6 +57,7 @@ export default class extends Component {
   handleDelete = () => {
     this.props.setModalData('delete', this.props.selectedData);
   };
+
   render() {
     const { modalVisible, selectedData, setModalData } = this.props;
     const visible = modalVisible ? true : false;
@@ -71,14 +75,14 @@ export default class extends Component {
       setModalData('updateValue', selectedData);
     };
     const onChangeDesc = event => {
-      selectedData.desc = event.target.value;
+      selectedData.desc = event;
       setModalData('updateValue', selectedData);
     };
     const onChangeFromTimePicker = value => {
       try {
         selectedData.start = value[0].toDate();
         selectedData.end = value[1].toDate();
-      } catch (e) {}
+      } catch (e) { }
       setModalData('updateValue', selectedData);
     };
     return (
@@ -95,17 +99,19 @@ export default class extends Component {
             <div className="isoCalendarInputWrapper">
               <Input
                 value={title}
-                placeholder="Set Title"
+                placeholder="Patient"
                 onChange={onChangeTitle}
               />
             </div>
 
             <div className="isoCalendarInputWrapper">
-              <Input
-                value={desc}
-                placeholder="Set Description"
-                onChange={onChangeDesc}
-              />
+            <Select
+                  defaultValue="Doctor"
+                  onChange={onChangeDesc}
+                  style={{ width: '100%' }}
+                >
+                  <Option value="1">Dr. Grace</Option>
+                </Select>
             </div>
 
             <div className="isoCalendarDatePicker">

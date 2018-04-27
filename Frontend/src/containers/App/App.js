@@ -11,13 +11,13 @@ import Sidebar from "../Sidebar/Sidebar";
 import Topbar from "../Topbar/Topbar";
 // import ThemeSwitcher from "../../containers/ThemeSwitcher";
 import AppRouter from "./AppRouter";
-import { siteConfig } from "../../settings";
+// import { siteConfig } from "../../settings";
 import { AppLocale } from "../../dashApp";
 import themes from "../../settings/themes";
 import AppHolder from "./commonStyle";
 import "./global.css";
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 const { logout } = authAction;
 const { toggleAll } = appActions;
 export class App extends Component {

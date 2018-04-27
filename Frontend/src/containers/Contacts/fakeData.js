@@ -3,8 +3,8 @@ export const otherAttributes = [
   { title: 'Address', value: 'address', type: 'string' },
   { title: 'Email', value: 'email', type: 'string' },
   { title: 'DOB', value: 'dob', type: 'integer' },
-  { title: 'Doctor', value: 'doctor', type: 'string' },
-  { title: 'Notes', value: 'note', type: 'paragraph' }
+  // { title: 'Doctor', value: 'doctor', type: 'string' },
+  // { title: 'Notes', value: 'note', type: 'paragraph' }
 ];
 
 const contactList = JSON.parse(
