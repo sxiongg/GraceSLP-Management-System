@@ -103,7 +103,7 @@ export default class extends Component {
             <div className="isoCalendarInputWrapper">
               <Input
                 value={desc}
-                placeholder="Set DEscription"
+                placeholder="Set Description"
                 onChange={onChangeDesc}
               />
             </div>
