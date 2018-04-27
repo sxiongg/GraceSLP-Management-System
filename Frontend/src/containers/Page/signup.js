@@ -1,22 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
 import Input from '../../components/uielements/input';
-// import Checkbox from '../../components/uielements/checkbox';
 import Button from '../../components/uielements/button';
-// import authAction from '../../redux/auth/actions';
-// import Auth0 from '../../helpers/auth0/index';
-// import Firebase from '../../helpers/firebase';
-// import  FirebaseLogin from '../../components/firebase';
 import IntlMessages from '../../components/utility/intlMessages';
 import SignUpStyleWrapper from './signup.style';
 import axios from 'axios';
 import Checkbox from '../../components/uielements/checkbox';
-// import { SelectOption } from '../../components/uielements/select';
-// const Option = SelectOption;
-
-
-// const { login } = authAction;
+import Select, { SelectOption } from '../../components/uielements/select';
+const Option = SelectOption;
 
 class SignUp extends Component {
   state = {
@@ -54,67 +45,28 @@ class SignUp extends Component {
 
       let headers = {
         headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'}
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        }
       }
- 
+
       console.log(newAccount);
- 
+
       axios.post('http://localhost:5000/api/employees', newAccount, headers)
-
-      // axios.post('http://localhost:5000/api/employees', newAccount, {
-      //   headers: {
-      //     'Access-Control-Allow-Origin': '*',
-      //     'Content-Type': 'application/json'
-      //   },
-      // })
-    //   ).then(
-    //     response => {
-    //       if (response.status === 200) {
-    //         alert("Account created.")
-    //       }
-    //       else {
-    //         alert("Account was not created. Please try again.")
-    //       }
-    //     }
-    //   )
-    // }
-    //   else {
-    //     alert("Passwords do not match.");
-    //   }
-
-    //   axios({
-    //     method: 'post',
-    //     url: 'http://localhost:5000/api/employees',
-    //     data: {
-    //       firstName: this.state.firstName,
-    //       lastName: this.state.lastName,
-    //       email: this.state.email,
-    //       username: this.state.username,
-    //       position: this.state.position,
-    //       isAdmin: this.state.isAdmin,
-    //       daysAvailable: this.state.daysAvailable,
-    //       startTime: this.state.startTime,
-    //       endTime: this.state.endTime,
-    //     },
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   }).then(
-    //     response => {
-    //       if (response.status === 200) {
-    //         alert("Account created.")
-    //       }
-    //       else {
-    //         alert("Account was not created. Please try again.")
-    //       }
-    //     }
-    //   )
-    // }
-    // else {
-    //   alert("Passwords do not match.");
-    // }
-  }};
+        .then(
+          response => {
+            if (response.status == 200) {
+              alert("Account created.")
+            }
+            else {
+              alert("Account was not created. Please try again.")
+            }
+          })
+    }
+    else {
+      alert("Passwords do not match.")
+    }
+  }
 
   render() {
     return (
