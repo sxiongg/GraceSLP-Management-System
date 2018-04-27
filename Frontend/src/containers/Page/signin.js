@@ -70,9 +70,9 @@ class SignIn extends Component {
                   <IntlMessages id="page.signInButton" />
                 </Button>
 
-                <Link to="/forgotpassword" className="isoForgotPass">
+                {/* <Link to="/forgotpassword" className="isoForgotPass">
                   <IntlMessages id="page.signInForgotPass" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

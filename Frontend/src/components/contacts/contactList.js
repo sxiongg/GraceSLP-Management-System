@@ -7,9 +7,13 @@ import { ContactListWrapper } from './contactList.style';
 import Scrollbar from '../utility/customScrollBar';
 
 function filterContacts(contacts, search) {
+    for (var i = 0; i < contacts.length; i++) {
+      contacts[i].name = contacts[i].firstName + " " + contacts[i].lastName
+    }
+  
   search = search.toUpperCase();
   return search
-    ? contacts.filter(contact => contact.firstName.toUpperCase().includes(search))
+    ? contacts.filter(contact => contact.name.toUpperCase().includes(search))
     : contacts;
 }
 

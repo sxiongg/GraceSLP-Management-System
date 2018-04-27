@@ -132,15 +132,11 @@ class SignUp extends Component {
 
               <div className="isoInputWrapper isoLeftRightComponent">
                 <p>Start Time</p>
-                {/* <Input value={this.state.startTime} onChange={(e) => this.setState({ startTime: e.target.value })} size="large" type="time" placeholder="Start Time" /> */}
                 <p>End Time</p>
-                {/* <Input value={this.state.endTime} onChange={(e) => this.setState({ endTime: e.target.value })} size="large" type="time" placeholder="End Time" /> */}
               </div>
 
               <div className="isoInputWrapper isoLeftRightComponent">
-                {/* <p>Start Time</p> */}
                 <Input value={this.state.startTime} onChange={(e) => this.setState({ startTime: e.target.value })} size="large" type="time" placeholder="Start Time" />
-                {/* <p>End Time</p> */}
                 <Input value={this.state.endTime} onChange={(e) => this.setState({ endTime: e.target.value })} size="large" type="time" placeholder="End Time" />
               </div>
 

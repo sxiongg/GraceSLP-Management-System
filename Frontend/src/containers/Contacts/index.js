@@ -24,22 +24,20 @@ class Contacts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        contacts: []
+      contacts: []
     }
-}
+  }
 
-componentDidMount() {
-  axios.get('http://localhost:5000/api/patients')
-  .then(response => {
-      console.log (response.data);
+  componentDidMount() {
+    axios.get('http://localhost:5000/api/patients')
+      .then(response => {
+        this.setState({ contacts: response.data })
 
-      this.setState ({ contacts: response.data })
-
-        for ( var e = 0; e < response.data.length; e++) {
-        this.state.contacts[e].dob = response.data[e].dob.substring(0,10)
-      }      
-  })
-}
+        for (var e = 0; e < response.data.length; e++) {
+          this.state.contacts[e].dob = response.data[e].dob.substring(0, 10)
+        }
+      })
+  }
 
   render() {
     const {
@@ -54,7 +52,7 @@ componentDidMount() {
 
     const selectedContact = selectedId
       ? this.state.contacts.filter(contact => contact.id === selectedId)[0]
-      :null;
+      : null;
     const onVIewChange = () => viewChange(!editView);
     return (
       <ContactsWrapper
@@ -66,14 +64,13 @@ componentDidMount() {
             contacts={this.state.contacts}
             selectedId={selectedId}
             changeContact={changeContact}
-            // deleteContact={deleteContact}
           />
         </div>
         <Layout className="isoContactBoxWrapper">
           {selectedContact ? (
             <Content className="isoContactBox">
               <div className="isoContactControl">
-                 {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
+                {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
               </div>
               <Scrollbar className="contactBoxScrollbar">
                 {editView ? (
@@ -83,17 +80,17 @@ componentDidMount() {
                     otherAttributes={otherAttributes}
                   />
                 ) : (
-                  <SingleContactView
-                    contact={selectedContact}
-                    otherAttributes={otherAttributes}
-                  />
-                )}
+                    <SingleContactView
+                      contact={selectedContact}
+                      otherAttributes={otherAttributes}
+                    />
+                  )}
               </Scrollbar>
-              </Content>
+            </Content>
           ) : (
-            <div className="isoContactControl">
-            </div>
-          )}
+              <div className="isoContactControl">
+              </div>
+            )}
         </Layout>
       </ContactsWrapper>
     );
@@ -112,10 +109,8 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps,{
+export default connect(mapStateToProps, {
   changeContact,
-  // addContact,
   editContact,
-  // deleteContact,
   viewChange
-} )(Contacts);
+})(Contacts);

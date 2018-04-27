@@ -25,18 +25,16 @@ class Employees extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        employees: []
+      employees: []
     }
-}
+  }
 
-componentDidMount() {
-  axios.get('http://localhost:5000/api/employees')
-  .then(response => {
-      console.log (response.data);
-
-      this.setState ({ employees: response.data })
-  })
-}
+  componentDidMount() {
+    axios.get('http://localhost:5000/api/employees')
+      .then(response => {
+        this.setState({ employees: response.data })
+      })
+  }
 
 
   render() {
@@ -44,7 +42,6 @@ componentDidMount() {
       selectedId,
       editView,
       changeContact,
-      // addContact,
       editContact,
       deleteContact,
       viewChange
@@ -52,7 +49,7 @@ componentDidMount() {
 
     const selectedContact = selectedId
       ? this.state.employees.filter(contact => contact.id === selectedId)[0]
-      :null;
+      : null;
     const onVIewChange = () => viewChange(!editView);
     return (
       <ContactsWrapper
@@ -71,7 +68,7 @@ componentDidMount() {
           {selectedContact ? (
             <Content className="isoContactBox">
               <div className="isoContactControl">
-                  {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
+                {editView ? <div></div> : <Button type="button" onClick={onVIewChange}><Icon type="edit" />}</Button>}{" "}
               </div>
 
               <Scrollbar className="contactBoxScrollbar">
@@ -82,17 +79,17 @@ componentDidMount() {
                     otherAttributes={otherAttributes}
                   />
                 ) : (
-                  <SingleContactView
-                    contact={selectedContact}
-                    otherAttributes={otherAttributes}
-                  />
-                )}
+                    <SingleContactView
+                      contact={selectedContact}
+                      otherAttributes={otherAttributes}
+                    />
+                  )}
               </Scrollbar>
             </Content>
           ) : (
-            <div className="isoContactControl">
-            </div>
-          )}
+              <div className="isoContactControl">
+              </div>
+            )}
         </Layout>
       </ContactsWrapper>
     );
@@ -111,10 +108,9 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps,{
+export default connect(mapStateToProps, {
   changeContact,
-  // addContact,
   editContact,
   deleteContact,
   viewChange
-} )(Employees);
+})(Employees);

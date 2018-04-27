@@ -55,8 +55,5 @@ export default class extends Component {
           <Button icon="close" type="button" className="isoDeleteBtn" />
         </Popconfirm ></Link>
     );
-
-
-
   }
 }
