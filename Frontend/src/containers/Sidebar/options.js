@@ -14,7 +14,7 @@ const options = [
   {
     key: "add-patient",
     label: "sidebar.addPatient",
-    leftIcon: "ion-android-people"
+    leftIcon: "ion-android-add"
   },
   {
     key: "employees",
@@ -134,117 +134,117 @@ const options = [
   //     // }
   //   ]
   // },
-  {
-    key: "Forms",
-    label: "sidebar.forms",
-    leftIcon: "ion-android-mail",
-    children: [
-      {
-        key: "InputField",
-        label: "sidebar.input"
-      },
-      {
-        key: "editor",
-        label: "sidebar.editor"
-      },
-      {
-        key: "FormsWithValidation",
-        label: "sidebar.formsWithValidation"
-      },
+  // {
+  //   key: "Forms",
+  //   label: "sidebar.forms",
+  //   leftIcon: "ion-android-mail",
+  //   children: [
+  //     {
+  //       key: "InputField",
+  //       label: "sidebar.input"
+  //     },
+  //     {
+  //       key: "editor",
+  //       label: "sidebar.editor"
+  //     },
+  //     {
+  //       key: "FormsWithValidation",
+  //       label: "sidebar.formsWithValidation"
+  //     },
       // {
       //   key: "progress",
       //   label: "sidebar.progress"
       // },
-      {
-        key: "button",
-        label: "sidebar.button"
-      },
-      {
-        key: "tab",
-        label: "sidebar.tab"
-      },
-      {
-        key: "checkbox",
-        label: "sidebar.checkbox"
-      },
-      {
-        key: "radiobox",
-        label: "sidebar.radiobox"
-      },
-      {
-        key: "selectbox",
-        label: "sidebar.selectbox"
-      },
-      {
-        key: "transfer",
-        label: "sidebar.transfer"
-      },
-      {
-        key: "autocomplete",
-        label: "sidebar.autocomplete"
-      }
-    ]
-  },
+  //     {
+  //       key: "button",
+  //       label: "sidebar.button"
+  //     },
+  //     {
+  //       key: "tab",
+  //       label: "sidebar.tab"
+  //     },
+  //     {
+  //       key: "checkbox",
+  //       label: "sidebar.checkbox"
+  //     },
+  //     {
+  //       key: "radiobox",
+  //       label: "sidebar.radiobox"
+  //     },
+  //     {
+  //       key: "selectbox",
+  //       label: "sidebar.selectbox"
+  //     },
+  //     {
+  //       key: "transfer",
+  //       label: "sidebar.transfer"
+  //     },
+  //     {
+  //       key: "autocomplete",
+  //       label: "sidebar.autocomplete"
+  //     }
+  //   ]
+  // },
   // {
   //   key: 'gridLayout',
   //   label: 'sidebar.boxOptions',
   //   leftIcon: 'ion-cube'
   // },
-  {
-    key: "uielements",
-    label: "sidebar.uiElements",
-    leftIcon: "ion-leaf",
-    children: [
-      {
-        key: "op_badge",
-        label: "sidebar.badge"
-      },
-      {
-        key: "op_card",
-        label: "sidebar.card2"
-      },
-      {
-        key: "op_carousel",
-        label: "sidebar.corusel"
-      },
-      {
-        key: "op_collapse",
-        label: "sidebar.collapse"
-      },
-      {
-        key: "op_popover",
-        label: "sidebar.popover"
-      },
-      {
-        key: "op_tooltip",
-        label: "sidebar.tooltip"
-      },
-      {
-        key: "op_tag",
-        label: "sidebar.tag"
-      },
-      {
-        key: "op_timeline",
-        label: "sidebar.timeline"
-      },
-      {
-        key: "dropdown",
-        label: "sidebar.dropdown"
-      },
-      {
-        key: "pagination",
-        label: "sidebar.pagination"
-      },
-      {
-        key: "rating",
-        label: "sidebar.rating"
-      },
-      {
-        key: "tree",
-        label: "sidebar.tree"
-      }
-    ]
-  },
+  // {
+  //   key: "uielements",
+  //   label: "sidebar.uiElements",
+  //   leftIcon: "ion-leaf",
+  //   children: [
+  //     {
+  //       key: "op_badge",
+  //       label: "sidebar.badge"
+  //     },
+  //     {
+  //       key: "op_card",
+  //       label: "sidebar.card2"
+  //     },
+  //     {
+  //       key: "op_carousel",
+  //       label: "sidebar.corusel"
+  //     },
+  //     {
+  //       key: "op_collapse",
+  //       label: "sidebar.collapse"
+  //     },
+  //     {
+  //       key: "op_popover",
+  //       label: "sidebar.popover"
+  //     },
+  //     {
+  //       key: "op_tooltip",
+  //       label: "sidebar.tooltip"
+  //     },
+  //     {
+  //       key: "op_tag",
+  //       label: "sidebar.tag"
+  //     },
+  //     {
+  //       key: "op_timeline",
+  //       label: "sidebar.timeline"
+  //     },
+  //     {
+  //       key: "dropdown",
+  //       label: "sidebar.dropdown"
+  //     },
+  //     {
+  //       key: "pagination",
+  //       label: "sidebar.pagination"
+  //     },
+  //     {
+  //       key: "rating",
+  //       label: "sidebar.rating"
+  //     },
+  //     {
+  //       key: "tree",
+  //       label: "sidebar.tree"
+  //     }
+  //   ]
+  // },
   // {
   //   key: "advancedUielements",
   //   label: "sidebar.advancedElements",
@@ -310,48 +310,48 @@ const options = [
   //     }
   //   ]
   // },
-  {
-    key: "pages",
-    label: "sidebar.pages",
-    leftIcon: "ion-document-text",
-    children: [
-      {
-        key: "404",
-        label: "sidebar.404",
-        withoutDashboard: true
-      },
-      {
-        key: "500",
-        label: "sidebar.500",
-        withoutDashboard: true
-      },
-      {
-        key: "signin",
-        label: "sidebar.signIn",
-        withoutDashboard: true
-      },
-      {
-        key: "signup",
-        label: "sidebar.signUp",
-        withoutDashboard: true
-      },
-      {
-        key: "forgotpassword",
-        label: "sidebar.forgotPw",
-        withoutDashboard: true
-      },
-      {
-        key: "resetpassword",
-        label: "sidebar.resetPw",
-        withoutDashboard: true
-      }
+  // {
+  //   key: "pages",
+  //   label: "sidebar.pages",
+  //   leftIcon: "ion-document-text",
+  //   children: [
+  //     {
+  //       key: "404",
+  //       label: "sidebar.404",
+  //       withoutDashboard: true
+  //     },
+  //     {
+  //       key: "500",
+  //       label: "sidebar.500",
+  //       withoutDashboard: true
+  //     },
+  //     {
+  //       key: "signin",
+  //       label: "sidebar.signIn",
+  //       withoutDashboard: true
+  //     },
+  //     {
+  //       key: "signup",
+  //       label: "sidebar.signUp",
+  //       withoutDashboard: true
+  //     },
+  //     {
+  //       key: "forgotpassword",
+  //       label: "sidebar.forgotPw",
+  //       withoutDashboard: true
+  //     },
+  //     {
+  //       key: "resetpassword",
+  //       label: "sidebar.resetPw",
+  //       withoutDashboard: true
+  //     }
       // {
       //   key: 'comingSoon',
       //   label: 'sidebar.comingSoon',
       //    withoutDashboard: true
       // }
-    ]
-  }
+    // ]
+  // }
   // ...getDevSidebar
 ];
 export default options;
