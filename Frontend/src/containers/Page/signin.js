@@ -16,28 +16,28 @@ class SignIn extends Component {
     username: "",
     password: ""
   };
-  
+
   handleLogin = () => {
-      if (this.state.username === "" || this.state.password === "") {
-        alert("Enter user information!")
-      }
-      else {
-        axios.get('http://localhost:5000/api/employees/username/' + this.state.username)
-          .then(response => {
-            if (response.status === 204) {
-              alert("Username does not exist.");
-            }
-            else if (response.data.password === this.state.password) {
-              const { login } = this.props;
-              login();
-              console.log("success");
-              this.props.history.push("/dashboard");
-            }
-            else {
-              alert("Incorrect Password!");
-            }
-          })
-      }
+    if (this.state.username === "" || this.state.password === "") {
+      alert("Enter user information!")
+    }
+    else {
+      axios.post('http://localhost:5000/api/employees/verify/' + this.state.username + "/" + this.state.password)
+        .then(response => {
+          if (response.data === "failed") {
+            alert("Login Failed");
+          }
+          else if (response.data === "success") {
+            const { login } = this.props;
+            login();
+            console.log("success");
+            this.props.history.push("/dashboard");
+          }
+          else {
+            alert("Login Failed")
+          }
+        })
+    }
   };
 
   render() {
