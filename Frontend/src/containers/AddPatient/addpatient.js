@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';import IntlMessages from '../../components/utility/intlMessages';
+import { Link } from 'react-router-dom'; import IntlMessages from '../../components/utility/intlMessages';
 import SignUpStyleWrapper from '../Page/signup.style';
 import Input from '../../components/uielements/input';
 import Button from '../../components/uielements/button';
@@ -8,58 +8,57 @@ import Select, { SelectOption } from '../../components/uielements/select';
 const Option = SelectOption;
 
 class AddPatient extends Component {
-        state = {
-          firstName: "",
-          lastName: "",
-          phone: "",
-          email: "",
-          address: "",
-          doctorNotes: [],
-          dob: "",
-          doctorId: 0,
-          locationId: 0,
-          appointments: []
-        };
+  state = {
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    address: "",
+    doctorNotes: [],
+    dob: "",
+    doctorId: 0,
+    locationId: 0,
+    appointments: []
+  };
 
-    postPatient = () => {
-      let newPatient = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        phone: this.state.phone,
-        email: this.state.email,
-        address: this.state.address,
-        dob: this.state.dob,
-        doctorId: this.state.doctorId,
-        locationId: this.state.locationId,
-        doctorNotes: this.state.doctorNotes,
-        appointments: this.state.appointments,
-      }
-
-      let headers = {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json'
-        }
-      }
-
-      console.log(newPatient);
-
-      axios.post('http://localhost:5000/api/patients', newPatient, headers)
-        .then(
-          response => {
-            if (response.status == 200) {
-              alert("Added new patient.")
-            }
-            else {
-              alert("Patient was not added. Please try again.")
-            }
-          }).catch(
-            alert("Patient was not added. Please try again.")
-          )
+  postPatient = () => {
+    let newPatient = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      phone: this.state.phone,
+      email: this.state.email,
+      address: this.state.address,
+      dob: this.state.dob,
+      doctorId: this.state.doctorId,
+      locationId: this.state.locationId,
+      doctorNotes: this.state.doctorNotes,
+      appointments: this.state.appointments,
     }
-    render() {
-        return (
-            <SignUpStyleWrapper className="isoSignUpPage">
+
+    let headers = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
+      }
+    }
+
+    console.log(newPatient);
+
+    axios.post('http://localhost:5000/api/patients', newPatient, headers)
+      .then(
+        response => {
+          if (response.status === 200) {
+            alert("Added new patient.")
+          }
+          else {
+            alert("Patient was not added. Please try again.")
+          }
+        })
+
+  }
+  render() {
+    return (
+      <SignUpStyleWrapper className="isoSignUpPage">
         <div className="isoSignUpContentWrapper">
           <div className="isoSignUpContent">
             <div className="isoLogoWrapper">
@@ -104,7 +103,7 @@ class AddPatient extends Component {
               </div>
 
               <div className="isoInputWrapper">
-              <Select
+                <Select
                   defaultValue="Location"
                   onChange={(e) => this.setState({ locationId: e })}
                   style={{ width: '100%' }}
@@ -114,16 +113,18 @@ class AddPatient extends Component {
               </div>
 
               <div className="isoInputWrapper">
-                <Button onClick={this.postPatient} type="primary">
-                  <IntlMessages id="sidebar.addPatient" />
-                </Button>
+                <Link to="/dashboard/patients">
+                  <Button onClick={this.postPatient} type="primary">
+                    <IntlMessages id="sidebar.addPatient" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </SignUpStyleWrapper>
-        )
-    }
+    )
+  }
 }
 
 export default AddPatient;

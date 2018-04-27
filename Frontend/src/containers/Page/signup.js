@@ -55,15 +55,13 @@ class SignUp extends Component {
       axios.post('http://localhost:5000/api/employees', newAccount, headers)
         .then(
           response => {
-            if (response.status == 200) {
+            if (response.status === 200) {
               alert("Account created.")
             }
             else {
               alert("Account was not created. Please try again.")
             }
-          }).catch(
-            alert("Account was not created. Please try again.")
-          )
+          })
     }
     else {
       alert("Passwords do not match.")

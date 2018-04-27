@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { palette } from 'styled-theme';
-import bgImage from '../../image/work.jpg';
+// import bgImage from '../../image/work.jpg';
 import WithDirection from '../../settings/withDirection';
 
 const SignUpStyleWrapper = styled.div`

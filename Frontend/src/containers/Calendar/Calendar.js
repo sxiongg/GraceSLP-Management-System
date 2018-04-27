@@ -6,7 +6,10 @@ import ModalEvents from './modalEvents';
 import calendarActions from '../../redux/calendar/actions';
 import { CalendarStyleWrapper } from './calendar.style';
 import DnDCalendar from './DnDCalendar';
+import axios from 'axios';
 const { changeView, changeEvents } = calendarActions;
+
+export var otherAttributes = [];
 
 const getIndex = (events, selectedEvent) =>
   events.findIndex(event => event.id === selectedEvent.id);
@@ -16,6 +19,19 @@ class FullCalender extends Component {
     modalVisible: false,
     selectedData: undefined
   };
+
+  
+
+  componentDidMount() {
+
+    axios.get('http://localhost:5000/api/appointments')
+    .then(response => {
+      console.log (response.data);
+
+      otherAttributes = (response.data[0])
+
+    })
+  }
 
   onSelectEvent = selectedData => {
     this.setState({ modalVisible: 'update', selectedData });
@@ -64,6 +80,23 @@ class FullCalender extends Component {
     } else {
       if (modalVisible === 'new') {
         events.push(selectedData);
+
+        let headers = {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
+          }
+        }
+
+        axios.post('http://localhost:5000/api/appointments', selectedData, headers)
+        .then(response => {
+          console.log(response.data);
+          console.log(selectedData);
+          console.log(selectedData.start.toString().substring(0, 10));
+        })
+
+
+
       } else {
         const index = getIndex(events, selectedData);
         if (index > -1) {

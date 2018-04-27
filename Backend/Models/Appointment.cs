@@ -12,7 +12,6 @@ namespace GraceSLP
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
         public string Notes { get; set; }
-
         public int PatientId { get; set; }
         
         [ForeignKey( "PatientId" ) ]

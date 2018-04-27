@@ -12592,23 +12592,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/SiaXiong/.nuget/packages/": {},
+    "/Users/kelsey/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/SiaXiong/RedwoodCode/Externship/Backend/Externship.csproj",
+      "projectUniqueName": "/Users/kelsey/Desktop/Redwood_Codes/GraceSLP/Backend/Externship.csproj",
       "projectName": "Externship",
-      "projectPath": "/Users/SiaXiong/RedwoodCode/Externship/Backend/Externship.csproj",
-      "packagesPath": "/Users/SiaXiong/.nuget/packages/",
-      "outputPath": "/Users/SiaXiong/RedwoodCode/Externship/Backend/obj/",
+      "projectPath": "/Users/kelsey/Desktop/Redwood_Codes/GraceSLP/Backend/Externship.csproj",
+      "packagesPath": "/Users/kelsey/.nuget/packages/",
+      "outputPath": "/Users/kelsey/Desktop/Redwood_Codes/GraceSLP/Backend/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/SiaXiong/.nuget/NuGet/NuGet.Config"
+        "/Users/kelsey/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

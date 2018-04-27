@@ -47,6 +47,7 @@ export default class extends Component {
   handleOk = () => {
     this.props.setModalData('ok', this.props.selectedData);
   };
+
   handleCancel = () => {
     this.props.setModalData('cancel');
   };
@@ -54,6 +55,7 @@ export default class extends Component {
   handleDelete = () => {
     this.props.setModalData('delete', this.props.selectedData);
   };
+
   render() {
     const { modalVisible, selectedData, setModalData } = this.props;
     const visible = modalVisible ? true : false;
@@ -78,7 +80,7 @@ export default class extends Component {
       try {
         selectedData.start = value[0].toDate();
         selectedData.end = value[1].toDate();
-      } catch (e) {}
+      } catch (e) { }
       setModalData('updateValue', selectedData);
     };
     return (
@@ -95,7 +97,7 @@ export default class extends Component {
             <div className="isoCalendarInputWrapper">
               <Input
                 value={title}
-                placeholder="Set Title"
+                placeholder="Patient"
                 onChange={onChangeTitle}
               />
             </div>
@@ -103,7 +105,7 @@ export default class extends Component {
             <div className="isoCalendarInputWrapper">
               <Input
                 value={desc}
-                placeholder="Set DEscription"
+                placeholder="Doctor"
                 onChange={onChangeDesc}
               />
             </div>

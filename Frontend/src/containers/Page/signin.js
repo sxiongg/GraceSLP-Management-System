@@ -30,7 +30,6 @@ class SignIn extends Component {
           else if (response.data === "success") {
             const { login } = this.props;
             login();
-            console.log("success");
             this.props.history.push("/dashboard");
           }
           else {
